@@ -21,9 +21,13 @@
     %br
     = f.text_field :abv
   %p
+    = f.label :style
+    %br
+    = f.select :style, beer_styles
+  %p
     = f.label :source
     %br
-    = f.text_field :source
+    = f.select :source, beer_distributors
   %p
     = f.label :volume
     %br
@@ -31,7 +35,7 @@
   %p
     = f.label :volume_unit
     %br
-    = f.text_field :volume_unit
+    = f.select :volume_unit, beer_volumes
   %p
     = f.label :cost
     %br
@@ -39,15 +43,11 @@
   %p
     = f.label :glass_type
     %br
-    = f.text_field :glass_type
+    = f.select :glass_type, beer_glasses
   %p
     = f.label :sales_tax
     %br
-    = f.text_field :sales_tax
-  %p
-    = f.label :excise_tax
-    %br
-    = f.text_field :excise_tax
+    = f.select :sales_tax, county_tax
   %p
     = f.label :price
     %br

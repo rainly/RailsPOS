@@ -12,7 +12,7 @@ class CreateBottles < ActiveRecord::Migration
       t.integer :cost
       t.string :glass_type
       t.float :sales_tax
-      t.float :excise_tax
+      t.string :style
       t.integer :price
       t.integer :stock
       t.boolean :display

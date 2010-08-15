@@ -4,6 +4,9 @@ class Misc < ActiveRecord::Base
   has_many :tabs, :through => :purchasable 
   attr_accessible :display_name, :cost, :sales_tax, :price, :display
   
+  validates_uniqueness_of :display_name
+  validates_presence_of :display_name, :cost, :sales_tax, :price, :display
+  
   %w(price cost).each do |meth|
     define_method(meth) do
       self[meth.to_sym].to_f / 100

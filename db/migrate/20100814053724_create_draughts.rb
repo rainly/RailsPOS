@@ -13,7 +13,7 @@ class CreateDraughts < ActiveRecord::Migration
       t.integer :serving_size
       t.string :glass_type
       t.float :sales_tax
-      t.float :excise_tax
+      t.string :style
       t.integer :price
       t.integer :stock
       t.boolean :display
