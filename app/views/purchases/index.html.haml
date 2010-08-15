@@ -1,0 +1,17 @@
+- title "Purchases"
+
+%table
+  %tr
+    %th Cashier
+    %th Tab
+    %th Item
+  - for purchase in @purchases
+    %tr
+      %td= h purchase.user.username
+      %td= h purchase.tab.name
+      %td= h purchase.purchasable.display_name
+      %td= link_to 'Show', purchase
+      %td= link_to 'Edit', edit_purchase_path(purchase)
+      %td= link_to 'Destroy', purchase, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Purchase", new_purchase_path

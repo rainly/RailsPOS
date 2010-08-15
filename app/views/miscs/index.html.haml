@@ -1,0 +1,21 @@
+- title "Miscs"
+
+%table
+  %tr
+    %th Display Name
+    %th Cost
+    %th Sales Tax
+    %th Price
+    %th Display
+  - for misc in @miscs
+    %tr
+      %td= h misc.display_name
+      %td= h number_to_currency misc.cost
+      %td= h number_to_percentage misc.sales_tax, :precision => 2
+      %td= h number_to_currency misc.price
+      %td= h misc.display
+      %td= link_to 'Show', misc
+      %td= link_to 'Edit', edit_misc_path(misc)
+      %td= link_to 'Destroy', misc, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Misc", new_misc_path

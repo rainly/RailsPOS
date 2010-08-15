@@ -1,0 +1,23 @@
+- title "Transactions"
+
+%table
+  %tr
+    %th Created At
+    %th Cashier
+    %th Tab Name
+    %th Type
+    %th Drawer
+    %th Amount
+  - for transaction in @transactions
+    %tr
+      %td= h transaction.created_at
+      %td= h transaction.user.username  
+      %td= h transaction.tab.name
+      %td= h transaction.class
+      // %th= h transaction.tab.drawer.id
+      %td= h number_to_currency transaction.amount
+      %td= link_to 'Show', transaction
+      %td= link_to 'Edit', edit_transaction_path(transaction)
+      %td= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Transaction", new_transaction_path

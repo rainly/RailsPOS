@@ -1,0 +1,57 @@
+- title "Bottle"
+
+%p
+  %strong Version:
+  =h @bottle.version
+%p
+  %strong Display Name:
+  =h @bottle.display_name
+%p
+  %strong Full Name:
+  =h @bottle.full_name
+%p
+  %strong Brewery:
+  =h @bottle.brewery
+%p
+  %strong Country:
+  =h @bottle.country
+%p
+  %strong Abv:
+  =h @bottle.abv
+%p
+  %strong Source:
+  =h @bottle.source
+%p
+  %strong Volume:
+  =h @bottle.volume
+%p
+  %strong Volume Unit:
+  =h @bottle.volume_unit
+%p
+  %strong Cost:
+  =h @bottle.cost
+%p
+  %strong Glass Type:
+  =h @bottle.glass_type
+%p
+  %strong Sales Tax:
+  =h @bottle.sales_tax
+%p
+  %strong Excise Tax:
+  =h @bottle.excise_tax
+%p
+  %strong Price:
+  =h @bottle.price
+%p
+  %strong Stock:
+  =h @bottle.stock
+%p
+  %strong Display:
+  =h @bottle.display
+
+%p
+  = link_to "Edit", edit_bottle_path(@bottle)
+  |
+  = link_to "Destroy", @bottle, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", bottles_path

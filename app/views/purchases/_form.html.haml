@@ -1,0 +1,11 @@
+- form_for @purchase do |f|
+  = f.error_messages
+  %p
+    = f.hidden_field :user_id, :value => current_user.id
+    = f.label :tab_id
+    %br
+    = f.collection_select :tab_id, @tabs, :id, :name
+    = f.hidden_field :purchasable_type, :value => :Food
+    = f.collection_select :purchasable_id, Food.all, :id, :display_name
+  %p
+    = f.submit "Submit"

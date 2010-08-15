@@ -1,0 +1,68 @@
+- form_for @draught do |f|
+  = f.error_messages
+  %p
+    = f.label :display_name
+    %br
+    = f.text_field :display_name
+  %p
+    = f.label :full_name
+    %br
+    = f.text_field :full_name
+  %p
+    = f.label :brewery
+    %br
+    = f.text_field :brewery
+  %p
+    = f.label :country
+    %br
+    = f.text_field :country
+  %p
+    = f.label :abv
+    %br
+    = f.text_field :abv
+  %p
+    = f.label :source
+    %br
+    = f.text_field :source
+  %p
+    = f.label :volume
+    %br
+    = f.text_field :volume
+  %p
+    = f.label :volume_unit
+    %br
+    = f.text_field :volume_unit
+  %p
+    = f.label :keg_cost
+    %br
+    = f.text_field :keg_cost
+  %p
+    = f.label :serving_size
+    %br
+    = f.text_field :serving_size
+  %p
+    = f.label :glass_type
+    %br
+    = f.text_field :glass_type
+  %p
+    = f.label :sales_tax
+    %br
+    = f.text_field :sales_tax
+  %p
+    = f.label :excise_tax
+    %br
+    = f.text_field :excise_tax
+  %p
+    = f.label :price
+    %br
+    = f.text_field :price
+  %p
+    = f.label :stock
+    %br
+    = f.text_field :stock
+  %p
+    = f.label :display
+    %br
+    = f.check_box :display
+  %p
+    = f.submit "Submit"

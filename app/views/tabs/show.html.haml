@@ -1,0 +1,21 @@
+- title "Tab"
+
+%p
+  %strong Name:
+  =h @tab.name
+%p
+  %strong User:
+  =h @tab.user_id
+%p
+  %strong Closed At:
+  =h @tab.closed_at
+%p
+  %strong Type:
+  =h @tab.type
+
+%p
+  = link_to "Edit", edit_tab_path(@tab)
+  |
+  = link_to "Destroy", @tab, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", tabs_path

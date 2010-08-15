@@ -1,0 +1,16 @@
+- form_for @transaction do |f|
+  = f.error_messages
+  = f.hidden_field :user_id, :value => current_user.id
+  = f.label :tab_id
+  %br
+  = f.collection_select :tab_id, Tab.all, :id, :name
+  %p
+    = f.label :type_helper
+    %br
+    = f.text_field :type_helper
+  %p
+    = f.label :amount
+    %br
+    = f.text_field :amount
+  %p
+    = f.submit "Submit"

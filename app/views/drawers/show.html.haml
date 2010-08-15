@@ -1,0 +1,21 @@
+- title "Drawer"
+
+%p
+  %strong ID:
+  =h @drawer.id
+%p
+  %strong User:
+  =h @drawer.user_id
+%p
+  %strong Closed At:
+  - if @drawer.closed_at.blank?
+    =h "Open Drawer"
+  -else
+    =h @drawer.closed_at
+
+%p
+  = link_to "Edit", edit_drawer_path(@drawer)
+  |
+  = link_to "Destroy", @drawer, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", drawers_path

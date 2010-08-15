@@ -1,0 +1,21 @@
+- title "Foods"
+
+%table
+  %tr
+    %th Display Name
+    %th Cost
+    %th Sales Tax
+    %th Price
+    %th Display
+  - for food in @foods
+    %tr
+      %td= h food.display_name
+      %td= h number_to_currency food.cost
+      %td= h number_to_percentage food.sales_tax, :precision => 2
+      %td= h number_to_currency food.price
+      %td= h food.display
+      %td= link_to 'Show', food
+      %td= link_to 'Edit', edit_food_path(food)
+      %td= link_to 'Destroy', food, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Food", new_food_path

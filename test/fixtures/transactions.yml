@@ -1,0 +1,11 @@
+one:
+  type: MyString
+  amount: 1
+  user: 
+  tab: 
+
+two:
+  type: MyString
+  amount: 1
+  user: 
+  tab: 

@@ -1,0 +1,18 @@
+- title "Drawers"
+
+%table
+  %tr
+    %th User
+    %th Closed at
+  - for drawer in @drawers
+    %tr
+      %td= h drawer.user_id
+      - if drawer.closed_at.blank?
+        %td= "Open Drawer"
+      -else
+        %td= drawer.closed_at
+      %td= link_to 'Show', drawer
+      %td= link_to 'Edit', edit_drawer_path(drawer)
+      %td= link_to 'Destroy', drawer, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Drawer", new_drawer_path

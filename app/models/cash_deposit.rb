@@ -1,0 +1,3 @@
+class CashDeposit < Transaction
+  
+end

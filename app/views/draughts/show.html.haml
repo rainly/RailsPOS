@@ -1,0 +1,63 @@
+- title "Draught"
+
+%p
+  %strong Version:
+  =h @draught.version
+%p
+  %strong Display Name:
+  =h @draught.display_name
+%p
+  %strong Full Name:
+  =h @draught.full_name
+%p
+  %strong Brewery:
+  =h @draught.brewery
+%p
+  %strong Country:
+  =h @draught.country
+%p
+  %strong Abv:
+  =h @draught.abv
+%p
+  %strong Source:
+  =h @draught.source
+%p
+  %strong Volume:
+  =h @draught.volume
+%p
+  %strong Volume Unit:
+  =h @draught.volume_unit
+%p
+  %strong Keg Cost:
+  =h @draught.keg_cost
+%p
+  %strong Serving Size:
+  =h @draught.serving_size
+%p
+  %strong Cost:
+  =h @draught.cost
+%p
+  %strong Glass Type:
+  =h @draught.glass_type
+%p
+  %strong Sales Tax:
+  =h @draught.sales_tax
+%p
+  %strong Excise Tax:
+  =h @draught.excise_tax
+%p
+  %strong Price:
+  =h @draught.price
+%p
+  %strong Stock:
+  =h @draught.stock
+%p
+  %strong Display:
+  =h @draught.display
+
+%p
+  = link_to "Edit", edit_draught_path(@draught)
+  |
+  = link_to "Destroy", @draught, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", draughts_path

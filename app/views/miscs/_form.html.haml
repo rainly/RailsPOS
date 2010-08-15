@@ -1,0 +1,24 @@
+- form_for @misc do |f|
+  = f.error_messages
+  %p
+    = f.label :display_name
+    %br
+    = f.text_field :display_name
+  %p
+    = f.label :cost
+    %br
+    = f.text_field :cost
+  %p
+    = f.label :sales_tax
+    %br
+    = f.text_field :sales_tax
+  %p
+    = f.label :price
+    %br
+    = f.text_field :price
+  %p
+    = f.label :display
+    %br
+    = f.check_box :display
+  %p
+    = f.submit "Submit"

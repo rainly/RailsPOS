@@ -1,0 +1,21 @@
+- title "Users"
+
+%p= link_to "New User", new_user_path
+
+%table
+  %tr
+    %th ID
+    %th Username
+    %th Role
+  - for user in @users
+    %tr
+      %td= h user.id
+      %td= h user.username
+      %td= h user.role
+      
+      %td= link_to 'Show', user
+      -if can? :manage, :users
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+
+

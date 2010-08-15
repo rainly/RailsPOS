@@ -1,0 +1,13 @@
+one:
+  display_name: MyString
+  cost: 1
+  sales_tax: 1.5
+  price: 1
+  show: 
+
+two:
+  display_name: MyString
+  cost: 1
+  sales_tax: 1.5
+  price: 1
+  show: 

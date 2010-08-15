@@ -1,0 +1,18 @@
+- title "User"
+
+%p
+  %strong Username:
+  =h @user.username
+%p
+  %strong Role:
+  =h @user.role
+%p
+  %strong Password:
+  =h @user.password
+
+%p
+  = link_to "Edit", edit_user_path(@user)
+  |
+  = link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", users_path

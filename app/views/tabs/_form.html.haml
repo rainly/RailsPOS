@@ -1,0 +1,16 @@
+- form_for @tab do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+    = f.hidden_field :user_id, :value => current_user.id
+  %p
+    = f.label :Drawer
+    = f.collection_select :drawer_id, Drawer.all, :id, :id
+  %p
+    = f.label :Type
+    %br
+    = f.text_field :type_helper
+  %p
+    = f.submit "Submit"

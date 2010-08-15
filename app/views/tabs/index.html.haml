@@ -1,0 +1,28 @@
+- title "Tabs"
+
+%table
+  %tr
+    %th ID
+    %th Name
+    %th User
+    %th Closed at
+    %th Type
+    %th Purchases
+    %th Transactions
+  - for tab in @tabs
+    %tr
+      %th= h tab.id
+      %td= h tab.name
+      %td= h tab.user_id
+      - if tab.closed_at.blank?
+        %td= "Open"
+      - else
+        %td= h tab.closed_at
+      %td= h tab.type
+      %td= tab.purchases.count
+      %td= tab.transactions.count
+      %td= link_to 'Show', tab
+      %td= link_to 'Edit', edit_tab_path(tab)
+      %td= link_to 'Destroy', tab, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Tab", new_tab_path

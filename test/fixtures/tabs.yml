@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  user_id: 1
+  closed_at: 2010-08-14 10:40:03
+  type: MyString
+
+two:
+  name: MyString
+  user_id: 1
+  closed_at: 2010-08-14 10:40:03
+  type: MyString

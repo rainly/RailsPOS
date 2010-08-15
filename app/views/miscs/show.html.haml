@@ -1,0 +1,27 @@
+- title "Misc"
+
+%p
+  %strong Version:
+  =h @misc.version
+%p
+  %strong Display Name:
+  =h @misc.display_name
+%p
+  %strong Cost:
+  =h @misc.cost
+%p
+  %strong Sales Tax:
+  =h @misc.sales_tax
+%p
+  %strong Price:
+  =h @misc.price
+%p
+  %strong Display:
+  =h @misc.display
+
+%p
+  = link_to "Edit", edit_misc_path(@misc)
+  |
+  = link_to "Destroy", @misc, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", miscs_path

@@ -1,0 +1,27 @@
+- title "Food"
+
+%p
+  %strong Version:
+  =h @food.version
+%p
+  %strong Display Name:
+  =h @food.display_name
+%p
+  %strong Cost:
+  =h @food.cost
+%p
+  %strong Sales Tax:
+  =h @food.sales_tax
+%p
+  %strong Price:
+  =h @food.price
+%p
+  %strong Display:
+  =h @food.display
+
+%p
+  = link_to "Edit", edit_food_path(@food)
+  |
+  = link_to "Destroy", @food, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", foods_path

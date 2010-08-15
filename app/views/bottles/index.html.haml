@@ -1,0 +1,39 @@
+- title "Bottles"
+
+%table
+  %tr
+    %th Display Name
+    %th Full Name
+    %th Brewery
+    %th Country
+    %th Abv
+    %th Source
+    %th Volume
+    %th Cost
+    %th Glass
+    %th Sales Tax
+    %th Excise Tax
+    %th Price
+    %th Stock
+    %th Display
+  - for bottle in @bottles
+    %tr
+      %td= h bottle.display_name
+      %td= h bottle.full_name
+      %td= h bottle.brewery
+      %td= h bottle.country
+      %td= h bottle.abv
+      %td= h bottle.source
+      %td= h bottle.volume.to_s + " " + bottle.volume_unit
+      %td= h number_to_currency bottle.cost
+      %td= h bottle.glass_type
+      %td= h number_to_percentage bottle.sales_tax, :precision => 2
+      %td= h number_to_percentage bottle.excise_tax, :precision => 2
+      %td= h number_to_currency bottle.price
+      %td= h bottle.stock
+      %td= h bottle.display
+      %td= link_to 'Show', bottle
+      %td= link_to 'Edit', edit_bottle_path(bottle)
+      %td= link_to 'Destroy', bottle, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Bottle", new_bottle_path

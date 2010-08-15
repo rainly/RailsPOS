@@ -1,0 +1,3 @@
+class Sale < Tab
+  
+end

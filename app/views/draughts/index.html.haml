@@ -1,0 +1,43 @@
+- title "Draughts"
+
+%table
+  %tr
+    %th Display name
+    %th Full name
+    %th Brewery
+    %th Country
+    %th Abv
+    %th Source
+    %th Volume
+    %th Keg cost
+    %th Serving size
+    %th Cost
+    %th Glass type
+    %th Sales tax
+    %th Excise tax
+    %th Price
+    %th Stock
+    %th Display
+  - for draught in @draughts
+    %tr
+      %td= h draught.display_name
+      %td= h draught.full_name
+      %td= h draught.brewery
+      %td= h draught.country
+      %td= h number_to_percentage draught.abv, :precision => 2
+      %td= h draught.source
+      %td= h draught.volume.to_s + " " + draught.volume_unit
+      %td= h number_to_currency draught.keg_cost
+      %td= h draught.serving_size.to_s + " ml"
+      %td= h number_to_currency draught.cost
+      %td= h draught.glass_type
+      %td= h number_to_percentage draught.sales_tax, :precision => 2
+      %td= h number_to_percentage draught.excise_tax, :precision => 2
+      %td= h number_to_currency draught.price
+      %td= h draught.stock
+      %td= h draught.display
+      %td= link_to 'Show', draught
+      %td= link_to 'Edit', edit_draught_path(draught)
+      %td= link_to 'Destroy', draught, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Draught", new_draught_path

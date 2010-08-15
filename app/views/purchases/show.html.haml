@@ -1,0 +1,22 @@
+- title "Purchase"
+
+%p
+  %strong Cashier:
+  =h @purchase.user_id
+%p
+  %strong Type:
+  =h @purchase.purchasable_type
+%p
+  %strong ID:
+  =h @purchase.purchasable_id
+  
+%p
+  %strong Tab:
+  =h @purchase.tab_id
+
+%p
+  = link_to "Edit", edit_purchase_path(@purchase)
+  |
+  = link_to "Destroy", @purchase, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", purchases_path

@@ -1,0 +1,37 @@
+!!! Strict
+%html{html_attrs}
+  
+  %head
+    %title
+      = h(yield(:title) || "Untitled")
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    = stylesheet_link_tag 'application'
+    = yield(:head)
+  
+  %body
+    #container
+      #user_nav
+        - if current_user
+          Current User: #{current_user.username} 
+          %span.float_right= link_to "Logout", logout_path
+        -else
+          = link_to "Login", login_path
+      #menu_nav
+        %ul
+          %li= link_to "User", users_path
+          %li= link_to "Bottle", bottles_path
+          %li= link_to "Draught", draughts_path
+          %li= link_to "Food", foods_path
+          %li= link_to "Misc", miscs_path
+          %li= link_to "Drawer", drawers_path
+          %li= link_to "Tab", tabs_path
+          %li= link_to "Transaction", transactions_path
+          %li= link_to "Purchase", purchases_path
+      %br
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+      
+      - if show_title?
+        %h1=h yield(:title)
+      
+      = yield
