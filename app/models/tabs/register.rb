@@ -1,0 +1,3 @@
+class Register < Tab
+  
+end

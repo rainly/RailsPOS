@@ -4,7 +4,7 @@ class Bottle < ActiveRecord::Base
   has_many :purchases, :as => :purchasable
   has_many :tabs, :through => :purchasable 
   
-  attr_accessible :markup, :tax, :profit, :margin, :revenue, :style, :display_name, :full_name, :brewery, :country, :abv, :source, :volume, :volume_unit, :cost, :glass_type, :sales_tax, :price, :stock, :display
+  attr_accessible :style, :display_name, :full_name, :brewery, :country, :abv, :source, :volume, :volume_unit, :cost, :glass_type, :sales_tax, :price, :stock, :display
 
   validates_uniqueness_of :display_name
   validates_presence_of :full_name, :brewery, :country, :abv, :style, :source, :volume, :volume_unit, :cost, :glass_type, :sales_tax, :price, :stock

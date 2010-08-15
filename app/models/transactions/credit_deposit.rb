@@ -1,0 +1,3 @@
+class CreditDeposit < Transaction
+  
+end

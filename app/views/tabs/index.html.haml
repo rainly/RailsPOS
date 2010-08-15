@@ -5,7 +5,7 @@
     %th ID
     %th Name
     %th User
-    %th Closed at
+    %th Closed At
     %th Type
     %th Purchases
     %th Transactions
@@ -14,13 +14,13 @@
       %th= h tab.id
       %td= h tab.name
       %td= h tab.user_id
-      - if tab.closed_at.blank?
+      - if tab.open?
         %td= "Open"
       - else
         %td= h tab.closed_at
       %td= h tab.type
-      %td= tab.purchases.count
-      %td= tab.transactions.count
+      %td= link_to tab.purchases.count, tab_purchases_path(tab)
+      %td= link_to tab.transactions.count, tab_transactions_path(tab)
       %td= link_to 'Show', tab
       %td= link_to 'Edit', edit_tab_path(tab)
       %td= link_to 'Destroy', tab, :confirm => 'Are you sure?', :method => :delete

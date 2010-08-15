@@ -3,11 +3,15 @@
   = f.hidden_field :user_id, :value => current_user.id
   = f.label :tab_id
   %br
-  = f.collection_select :tab_id, Tab.all, :id, :name
+    = f.collection_select :tab_id, Tab.all, :id, :name
   %p
-    = f.label :type_helper
+    = f.label "Type"
     %br
-    = f.text_field :type_helper
+    = f.select :type_helper, transaction_types
+  %p
+    = f.label "Cashier"
+    %br
+    = f.collection_select :user_id, User.all, :id, :username
   %p
     = f.label :amount
     %br

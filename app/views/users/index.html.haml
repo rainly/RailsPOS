@@ -7,12 +7,19 @@
     %th ID
     %th Username
     %th Role
+    %th Drawers
+    %th Tabs
+    %th Transactions
+    %th Purchases
   - for user in @users
     %tr
       %td= h user.id
       %td= h user.username
       %td= h user.role
-      
+      %td= link_to user.drawers.count, user_drawers_path(user)
+      %td= link_to user.tabs.count, user_tabs_path(user)
+      %td= link_to user.transactions.count, user_transactions_path(user)
+      %td= link_to user.purchases.count, user_purchases_path(user)
       %td= link_to 'Show', user
       -if can? :manage, :users
         %td= link_to 'Edit', edit_user_path(user)

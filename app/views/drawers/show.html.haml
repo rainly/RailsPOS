@@ -1,17 +1,20 @@
 - title "Drawer"
 
 %p
-  %strong ID:
+  %strong Drawer ID:
   =h @drawer.id
 %p
-  %strong User:
-  =h @drawer.user_id
+  %strong Opened By:
+  =h @drawer.user.username
 %p
   %strong Closed At:
   - if @drawer.closed_at.blank?
     =h "Open Drawer"
   -else
     =h @drawer.closed_at
+%p
+  %strong Tabs:
+  = link_to @drawer.tabs.count, drawer_tabs_path(@drawer)
 
 %p
   = link_to "Edit", edit_drawer_path(@drawer)

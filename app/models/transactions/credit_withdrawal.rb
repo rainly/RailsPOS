@@ -1,0 +1,3 @@
+class CreditWithdrawal < Transaction
+  
+end

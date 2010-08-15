@@ -8,7 +8,10 @@
   =h @tab.user_id
 %p
   %strong Closed At:
-  =h @tab.closed_at
+  - if @tab.open?
+    =h "Open"
+  - else
+    =h @tab.closed_at
 %p
   %strong Type:
   =h @tab.type

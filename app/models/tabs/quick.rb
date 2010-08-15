@@ -1,0 +1,3 @@
+class Quick < Tab
+  
+end

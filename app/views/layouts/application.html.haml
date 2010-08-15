@@ -19,14 +19,16 @@
       #menu_nav
         %ul
           %li= link_to "User", users_path
+          %li= link_to "Drawer", drawers_path
+          %li= link_to "Tab", tabs_path
+          %li= "|"
+          %li= link_to "Transaction", transactions_path
+          %li= link_to "Purchase", purchases_path
+          %li= "|"
           %li= link_to "Bottle", bottles_path
           %li= link_to "Draught", draughts_path
           %li= link_to "Food", foods_path
           %li= link_to "Misc", miscs_path
-          %li= link_to "Drawer", drawers_path
-          %li= link_to "Tab", tabs_path
-          %li= link_to "Transaction", transactions_path
-          %li= link_to "Purchase", purchases_path
       %br
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"

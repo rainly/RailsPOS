@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :drawers
+  map.resources :drawers, :has_many => :tabs
   map.resources :purchases
   map.resources :transactions
   
@@ -10,6 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :credit_withdrawals, :controller => 'transactions'
 
   map.resources :sales, :controller => 'tabs'
+  map.resources :quicks, :controller => 'tabs'
   map.resources :registers, :controller => 'tabs'
 
   map.resources :tabs, :has_many => :purchases, :shallow => true
@@ -19,12 +20,16 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :foods
   map.resources :bottles
   map.resources :draughts
+  
+  map.resources :user_sessions
+  
+  map.resources :users, :has_many => :purchases, :shallow => true
+  map.resources :users, :has_many => :transactions, :shallow => true
+  map.resources :users, :has_many => :tabs, :shallow => true
+  map.resources :users, :has_many => :drawers, :shallow => true
 
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
-  
-  map.resources :user_sessions
-  map.resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
 

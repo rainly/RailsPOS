@@ -2,15 +2,19 @@
 
 %table
   %tr
-    %th User
-    %th Closed at
+    %th Drawer ID
+    %th Opened By
+    %th Closed At
+    %th Tabs
   - for drawer in @drawers
     %tr
-      %td= h drawer.user_id
+      %td= h drawer.id
+      %td= h drawer.user.username
       - if drawer.closed_at.blank?
         %td= "Open Drawer"
       -else
         %td= drawer.closed_at
+      %td= link_to drawer.tabs.count, drawer_tabs_path(drawer)
       %td= link_to 'Show', drawer
       %td= link_to 'Edit', edit_drawer_path(drawer)
       %td= link_to 'Destroy', drawer, :confirm => 'Are you sure?', :method => :delete

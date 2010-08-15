@@ -4,13 +4,17 @@
     = f.label :name
     %br
     = f.text_field :name
-    = f.hidden_field :user_id, :value => current_user.id
+  %p
+    = f.label 'Cashier'
+    %br  
+    = f.collection_select :user_id, User.all, :id, :username
   %p
     = f.label :Drawer
+    %br
     = f.collection_select :drawer_id, Drawer.all, :id, :id
   %p
     = f.label :Type
     %br
-    = f.text_field :type_helper
+    = f.select :type_helper, tab_types
   %p
     = f.submit "Submit"

@@ -13404,3 +13404,2151 @@ Rendering bottles/index
   [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '5554a1a9d01db7831ed4a7ac445a39e8fd0f2298b98d546c96e84a365c3969ffefe33a37a5afbe8cd68f2f0a18342d4d11e3a3595acc5e1d985993df6576a34b') LIMIT 1[0m
   [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
 Completed in 87ms (View: 25, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing PurchasesController#index (for 127.0.0.1 at 2010-08-15 10:04:56) [GET]
+  [4;36;1mPurchase Load (0.6ms)[0m   [0;1mSELECT * FROM "purchases" [0m
+Rendering template within layouts/application
+Rendering purchases/index
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 77ms (View: 53, DB: 1) | 200 OK [http://localhost/purchases]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 10:04:58) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 25ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:05:01) [GET]
+  [4;36;1mBottle Load (0.8ms)[0m   [0;1mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 1 AND "versions".versioned_type = 'Bottle') [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 41ms (View: 31, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 10:05:03) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 19ms (View: 2, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-15 10:05:05) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.9ms)
+Completed in 30ms (View: 13, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-08-15 10:05:25) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "user"=>{"password_confirmation"=>"12345", "role"=>"Admin", "username"=>"Justin Catalana", "password"=>"12345"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Load (61.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'justin catalana') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "role", "password_salt", "persistence_token") VALUES('2010-08-15 17:05:25', 'c113c2d4e86b82defc6d6ae67980f915dde60a11c547c3609e33be10b23c269da498c889cc2d71a8fd35f2c64635cf36a39b5be1b210adb2fec7106664c63bc3', '2010-08-15 17:05:25', 'Justin Catalana', 'Admin', 'h95X5whENd5HMupsiFmR', 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b')[0m
+Redirected to http://localhost:3000/
+Completed in 248ms (DB: 63) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 10:05:25) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 22ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-08-15 10:05:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 23ms (View: 7, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-08-15 10:05:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.8ms)
+Completed in 24ms (View: 8, DB: 0) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 10:05:40) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 19ms (View: 2, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 10:08:05) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 37ms (View: 16, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:08:41) [GET]
+  [4;36;1mBottle Load (0.8ms)[0m   [0;1mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 1 AND "versions".versioned_type = 'Bottle') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 112ms (View: 103, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:08:41) [GET]
+  [4;35;1mBottle Load (0.8ms)[0m   [0mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 1 AND "versions".versioned_type = 'Bottle') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 30ms (View: 21, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:08:43) [GET]
+  [4;36;1mBottle Load (0.8ms)[0m   [0;1mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 1 AND "versions".versioned_type = 'Bottle') [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 31ms (View: 22, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:08:57) [GET]
+  [4;35;1mBottle Load (0.8ms)[0m   [0mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 1 AND "versions".versioned_type = 'Bottle') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:08:59) [GET]
+  [4;36;1mBottle Load (0.8ms)[0m   [0;1mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 1 AND "versions".versioned_type = 'Bottle') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 30ms (View: 22, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:10:21) [GET]
+  [4;35;1mBottle Load (0.8ms)[0m   [0mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 1 AND "versions".versioned_type = 'Bottle') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:10:30) [GET]
+  [4;36;1mBottle Load (0.8ms)[0m   [0;1mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 1 AND "versions".versioned_type = 'Bottle') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 29ms (View: 22, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:10:50) [GET]
+  [4;35;1mBottle Load (0.8ms)[0m   [0mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 1 AND "versions".versioned_type = 'Bottle') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 86ms (View: 79, DB: 1) | 200 OK [http://localhost/bottles]
+  [4;36;1mBottle Load (0.7ms)[0m   [0;1mSELECT * FROM "bottles" LIMIT 1[0m
+
+
+Processing BottlesController#destroy (for 127.0.0.1 at 2010-08-15 10:11:53) [DELETE]
+  Parameters: {"authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "id"=>"1"}
+  [4;36;1mBottle Load (0.3ms)[0m   [0;1mSELECT * FROM "bottles" WHERE ("bottles"."id" = 1) [0m
+  [4;35;1mVestalVersions::Version Delete all (0.3ms)[0m   [0mDELETE FROM "versions" WHERE ((versioned_id = 1) AND (versioned_type = 'Bottle')) [0m
+  [4;36;1mBottle Destroy (0.1ms)[0m   [0;1mDELETE FROM "bottles" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/bottles
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/bottles/1]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:11:53) [GET]
+  [4;35;1mBottle Load (0.6ms)[0m   [0mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#new (for 127.0.0.1 at 2010-08-15 10:11:54) [GET]
+Rendering template within layouts/application
+Rendering bottles/new
+Rendered bottles/_form (15.4ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 108ms (View: 36, DB: 0) | 200 OK [http://localhost/bottles/new]
+
+
+Processing BottlesController#create (for 127.0.0.1 at 2010-08-15 10:12:27) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "bottle"=>{"price"=>"22", "glass_type"=>"Tulip", "volume_unit"=>"ml", "brewery"=>"Nøgne Ø", "cost"=>"5.40", "country"=>"no", "stock"=>"48", "sales_tax"=>"0.09", "display"=>"1", "volume"=>"500", "full_name"=>"Saison ", "display_name"=>"Nøgne Ø Saison", "source"=>"Morris Distributing", "style"=>"Ales", "abv"=>"6.5"}}
+  [4;36;1mBottle Load (0.1ms)[0m   [0;1mSELECT "bottles".id FROM "bottles" WHERE ("bottles"."display_name" = 'Nøgne Ø Saison') LIMIT 1[0m
+  [4;35;1mBottle Create (0.3ms)[0m   [0mINSERT INTO "bottles" ("volume_unit", "glass_type", "price", "brewery", "created_at", "country", "cost", "updated_at", "sales_tax", "stock", "volume", "display", "full_name", "display_name", "source", "abv", "style") VALUES('ml', 'Tulip', 2200, 'Nøgne Ø', '2010-08-15 17:12:27', 'no', 540, '2010-08-15 17:12:27', 0.09, 48, 500.0, 't', 'Saison ', 'Nøgne Ø Saison', 'Morris Distributing', 6.5, 'Ales')[0m
+Redirected to http://localhost:3000/bottles/2
+Completed in 17ms (DB: 0) | 302 Found [http://localhost/bottles]
+
+
+Processing BottlesController#show (for 127.0.0.1 at 2010-08-15 10:12:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mBottle Load (0.3ms)[0m   [0;1mSELECT * FROM "bottles" WHERE ("bottles"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering bottles/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 2 AND "versions".versioned_type = 'Bottle') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 98ms (View: 26, DB: 1) | 200 OK [http://localhost/bottles/2]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:12:31) [GET]
+  [4;35;1mBottle Load (0.8ms)[0m   [0mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 2 AND "versions".versioned_type = 'Bottle') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:12:40) [GET]
+  [4;36;1mBottle Load (0.8ms)[0m   [0;1mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 2 AND "versions".versioned_type = 'Bottle') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 30ms (View: 22, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:12:41) [GET]
+  [4;35;1mBottle Load (0.8ms)[0m   [0mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 2 AND "versions".versioned_type = 'Bottle') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#show (for 127.0.0.1 at 2010-08-15 10:12:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mBottle Load (0.3ms)[0m   [0;1mSELECT * FROM "bottles" WHERE ("bottles"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering bottles/show
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 2 AND "versions".versioned_type = 'Bottle') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/bottles/2]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:12:48) [GET]
+  [4;35;1mBottle Load (0.8ms)[0m   [0mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 2 AND "versions".versioned_type = 'Bottle') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 10:55:15) [GET]
+  [4;36;1mBottle Load (0.8ms)[0m   [0;1mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 2 AND "versions".versioned_type = 'Bottle') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 10:55:16) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 78ms (View: 61, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 10:55:33) [GET]
+  [4;35;1mDrawer Load (0.6ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#new (for 127.0.0.1 at 2010-08-15 10:55:35) [GET]
+Rendering template within layouts/application
+Rendering drawers/new
+Rendered drawers/_form (3.5ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 91ms (View: 86, DB: 0) | 200 OK [http://localhost/drawers/new]
+
+
+Processing DrawersController#create (for 127.0.0.1 at 2010-08-15 10:56:16) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "drawer"=>{"user_id"=>"1"}}
+  [4;36;1mDrawer Create (0.3ms)[0m   [0;1mINSERT INTO "drawers" ("created_at", "updated_at", "user_id", "closed_at") VALUES('2010-08-15 17:56:16', '2010-08-15 17:56:16', 1, NULL)[0m
+Redirected to http://localhost:3000/drawers/1
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/drawers]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 10:56:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDrawer Load (0.2ms)[0m   [0mSELECT * FROM "drawers" WHERE ("drawers"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 26ms (View: 20, DB: 0) | 200 OK [http://localhost/drawers/1]
+
+
+Processing DrawersController#destroy (for 127.0.0.1 at 2010-08-15 10:56:46) [DELETE]
+  Parameters: {"authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "id"=>"1"}
+  [4;35;1mDrawer Load (0.2ms)[0m   [0mSELECT * FROM "drawers" WHERE ("drawers"."id" = 1) [0m
+  [4;36;1mDrawer Destroy (0.2ms)[0m   [0;1mDELETE FROM "drawers" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/drawers
+Completed in 77ms (DB: 0) | 302 Found [http://localhost/drawers/1]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 10:56:46) [GET]
+  [4;35;1mDrawer Load (0.6ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#new (for 127.0.0.1 at 2010-08-15 10:56:48) [GET]
+Rendering template within layouts/application
+Rendering drawers/new
+Rendered drawers/_form (2.4ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://localhost/drawers/new]
+
+
+Processing DrawersController#create (for 127.0.0.1 at 2010-08-15 10:56:52) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "drawer"=>{"user_id"=>"1"}}
+  [4;36;1mDrawer Create (0.3ms)[0m   [0;1mINSERT INTO "drawers" ("created_at", "updated_at", "user_id", "closed_at") VALUES('2010-08-15 17:56:52', '2010-08-15 17:56:52', 1, NULL)[0m
+Redirected to http://localhost:3000/drawers/2
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/drawers]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 10:56:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDrawer Load (0.2ms)[0m   [0mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 22ms (View: 15, DB: 0) | 200 OK [http://localhost/drawers/2]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 10:56:56) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 82ms (View: 76, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 10:57:35) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 27ms (View: 21, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 10:59:39) [GET]
+  [4;36;1mDrawer Load (0.7ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 90ms (View: 84, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#new (for 127.0.0.1 at 2010-08-15 10:59:40) [GET]
+Rendering template within layouts/application
+Rendering drawers/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map) on line #6 of app/views/drawers/_form.html.haml:
+3:   %p
+4:     = f.label 'User'
+5:     %br
+6:     = f.collection_select :user_id, @users, :username, :id
+7:   %p
+8:     = f.submit "Submit"
+
+    app/views/drawers/_form.html.haml:6:in `_run_haml_app47views47drawers47_form46html46haml_locals_form_object'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:202:in `call'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:202:in `form_for'
+    haml (2.2.23) lib/haml/helpers.rb:573:in `call'
+    haml (2.2.23) lib/haml/helpers.rb:573:in `haml_bind_proc'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:208:in `form_for'
+    app/views/drawers/_form.html.haml:1:in `_run_haml_app47views47drawers47_form46html46haml_locals_form_object'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.23) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/drawers/new.html.haml:3:in `_run_haml_app47views47drawers47new46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (120.5ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DrawersController#new (for 127.0.0.1 at 2010-08-15 11:00:09) [GET]
+Rendering template within layouts/application
+Rendering drawers/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendered drawers/_form (14.9ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 28ms (View: 22, DB: 0) | 200 OK [http://localhost/drawers/new]
+
+
+Processing DrawersController#new (for 127.0.0.1 at 2010-08-15 11:00:23) [GET]
+Rendering template within layouts/application
+Rendering drawers/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendered drawers/_form (77.4ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 91ms (View: 85, DB: 1) | 200 OK [http://localhost/drawers/new]
+
+
+Processing DrawersController#create (for 127.0.0.1 at 2010-08-15 11:00:27) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "drawer"=>{"user_id"=>"1"}}
+  [4;35;1mDrawer Create (0.3ms)[0m   [0mINSERT INTO "drawers" ("created_at", "updated_at", "user_id", "closed_at") VALUES('2010-08-15 18:00:27', '2010-08-15 18:00:27', 1, NULL)[0m
+Redirected to http://localhost:3000/drawers/3
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/drawers]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 11:00:27) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mDrawer Load (0.2ms)[0m   [0;1mSELECT * FROM "drawers" WHERE ("drawers"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `usernmae' for #<ActiveRecord::Associations::BelongsToAssociation:0x1031f3bd8>) on line #8 of app/views/drawers/show.html.haml:
+5:   =h @drawer.id
+6: %p
+7:   %strong User:
+8:   =h @drawer.user.usernmae
+9: %p
+10:   %strong Closed At:
+11:   - if @drawer.closed_at.blank?
+
+    app/views/drawers/show.html.haml:8:in `_run_haml_app47views47drawers47show46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (35.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 11:00:44) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mDrawer Load (0.2ms)[0m   [0;1mSELECT * FROM "drawers" WHERE ("drawers"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/drawers/3]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 11:00:56) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mDrawer Load (0.2ms)[0m   [0mSELECT * FROM "drawers" WHERE ("drawers"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/drawers/3]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 11:01:11) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mDrawer Load (0.2ms)[0m   [0;1mSELECT * FROM "drawers" WHERE ("drawers"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/drawers/3]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 11:01:15) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 85ms (View: 79, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 11:01:45) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 28ms (View: 22, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 11:02:43) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 96ms (View: 89, DB: 2) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 11:04:59) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 34ms (View: 28, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 11:05:30) [GET]
+  [4;35;1mDrawer Load (0.8ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 99ms (View: 30, DB: 2) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 11:05:46) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 34ms (View: 28, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 11:06:12) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 27ms (View: 21, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 11:06:13) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 18ms (View: 2, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 11:06:19) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 89ms (View: 84, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 11:06:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDrawer Load (0.2ms)[0m   [0mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/drawers/2]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 11:07:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDrawer Load (0.2ms)[0m   [0;1mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 84ms (View: 77, DB: 1) | 200 OK [http://localhost/drawers/2]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 11:08:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDrawer Load (0.2ms)[0m   [0mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionView::TemplateError (undefined local variable or method `drawer' for #<ActionView::Base:0x1034051d8>) on line #17 of app/views/drawers/show.html.haml:
+14:     =h @drawer.closed_at
+15: %p
+16:   %strong Tabs:
+17:   =h link_to drawer.tabs.count, drawer_tabs_path
+18: 
+19: %p
+20:   = link_to "Edit", edit_drawer_path(@drawer)
+
+    app/views/drawers/show.html.haml:17:in `_run_haml_app47views47drawers47show46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (102.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 11:08:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDrawer Load (0.2ms)[0m   [0mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+
+ActionView::TemplateError (undefined local variable or method `drawer_tabs_path' for #<ActionView::Base:0x1034742b8>) on line #17 of app/views/drawers/show.html.haml:
+14:     =h @drawer.closed_at
+15: %p
+16:   %strong Tabs:
+17:   =h link_to @drawer.tabs.count, drawer_tabs_path
+18: 
+19: %p
+20:   = link_to "Edit", edit_drawer_path(@drawer)
+
+    app/views/drawers/show.html.haml:17:in `_run_haml_app47views47drawers47show46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (100.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 11:10:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDrawer Load (0.2ms)[0m   [0;1mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+
+ActionView::TemplateError (drawer_tabs_url failed to generate from {:controller=>"tabs", :action=>"index"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["drawers", :drawer_id, "tabs"] - are they all satisfied?) on line #17 of app/views/drawers/show.html.haml:
+14:     =h @drawer.closed_at
+15: %p
+16:   %strong Tabs:
+17:   =h link_to @drawer.tabs.count, drawer_tabs_path
+18: 
+19: %p
+20:   = link_to "Edit", edit_drawer_path(@drawer)
+
+    (eval):20:in `drawer_tabs_path'
+    app/views/drawers/show.html.haml:17:in `_run_haml_app47views47drawers47show46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (40.2ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 12:44:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDrawer Load (0.2ms)[0m   [0mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+
+ActionView::TemplateError (drawer_tabs_url failed to generate from {:controller=>"tabs", :action=>"index"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["drawers", :drawer_id, "tabs"] - are they all satisfied?) on line #17 of app/views/drawers/show.html.haml:
+14:     =h @drawer.closed_at
+15: %p
+16:   %strong Tabs:
+17:   =h link_to @drawer.tabs.count, drawer_tabs_path
+18: 
+19: %p
+20:   = link_to "Edit", edit_drawer_path(@drawer)
+
+    (eval):20:in `drawer_tabs_path'
+    app/views/drawers/show.html.haml:17:in `_run_haml_app47views47drawers47show46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 12:44:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDrawer Load (0.2ms)[0m   [0;1mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 35ms (View: 28, DB: 1) | 200 OK [http://localhost/drawers/2]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 12:44:41) [GET]
+  Parameters: {"drawer_id"=>"2"}
+  [4;36;1mTab Load (0.6ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/drawers/2/tabs]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 12:44:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDrawer Load (0.2ms)[0m   [0;1mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/drawers/2]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 12:45:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDrawer Load (0.2ms)[0m   [0;1mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 33ms (View: 27, DB: 1) | 200 OK [http://localhost/drawers/2]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 12:45:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDrawer Load (0.2ms)[0m   [0;1mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 90ms (View: 84, DB: 1) | 200 OK [http://localhost/drawers/2]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 12:46:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDrawer Load (0.2ms)[0m   [0;1mSELECT * FROM "drawers" WHERE ("drawers"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/drawers/2]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 12:46:01) [GET]
+  Parameters: {"drawer_id"=>"2"}
+  [4;36;1mTab Load (0.6ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 83ms (View: 76, DB: 1) | 200 OK [http://localhost/drawers/2/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 12:46:03) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mDrawer Load (0.3ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (24.0ms)
+Completed in 38ms (View: 31, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 12:46:09) [GET]
+  [4;36;1mDrawer Load (0.7ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+
+ActionView::TemplateError (drawer_tabs_url failed to generate from {:controller=>"tabs", :action=>"index"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["drawers", :drawer_id, "tabs"] - are they all satisfied?) on line #17 of app/views/drawers/index.html.haml:
+14:         %td= "Open Drawer"
+15:       -else
+16:         %td= drawer.closed_at
+17:       %td= link_to drawer.tabs.count, drawer_tabs_path
+18:       %td= link_to 'Show', drawer
+19:       %td= link_to 'Edit', edit_drawer_path(drawer)
+20:       %td= link_to 'Destroy', drawer, :confirm => 'Are you sure?', :method => :delete
+
+    (eval):20:in `drawer_tabs_path'
+    app/views/drawers/index.html.haml:17:in `_run_haml_app47views47drawers47index46html46haml'
+    app/views/drawers/index.html.haml:9:in `each'
+    app/views/drawers/index.html.haml:9:in `_run_haml_app47views47drawers47index46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (39.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 12:46:31) [GET]
+  [4;35;1mDrawer Load (0.9ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 34ms (View: 27, DB: 2) | 200 OK [http://localhost/drawers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-15 12:46:33) [GET]
+
+ActionController::RoutingError (No route matches "/drawers//tabs" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-15 12:46:52) [GET]
+
+ActionController::RoutingError (No route matches "/drawers//tabs" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 12:46:54) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 34ms (View: 28, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 12:46:56) [GET]
+  Parameters: {"drawer_id"=>"3"}
+  [4;35;1mTab Load (0.6ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/drawers/3/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 12:46:57) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mDrawer Load (0.3ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (25.2ms)
+Completed in 34ms (View: 26, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 12:47:08) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 84ms (View: 8, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 12:57:13) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+
+ActionView::TemplateError (undefined method `user_drawers_path' for #<ActionView::Base:0x10338bd38>) on line #19 of app/views/users/index.html.haml:
+16:       %td= h user.id
+17:       %td= h user.username
+18:       %td= h user.role
+19:       %td= link_to user.drawers.count, user_drawers_path(user)
+20:       
+21:       %td= link_to 'Show', user
+22:       -if can? :manage, :users
+
+    app/views/users/index.html.haml:19:in `_run_haml_app47views47users47index46html46haml'
+    app/views/users/index.html.haml:14:in `each'
+    app/views/users/index.html.haml:14:in `_run_haml_app47views47users47index46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (100.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 12:58:39) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+
+ActionView::TemplateError (undefined method `user_drawers_path' for #<ActionView::Base:0x102fe7100>) on line #19 of app/views/users/index.html.haml:
+16:       %td= h user.id
+17:       %td= h user.username
+18:       %td= h user.role
+19:       %td= link_to user.drawers.count, user_drawers_path(user)
+20:       
+21:       %td= link_to 'Show', user
+22:       -if can? :manage, :users
+
+    app/views/users/index.html.haml:19:in `_run_haml_app47views47users47index46html46haml'
+    app/views/users/index.html.haml:14:in `each'
+    app/views/users/index.html.haml:14:in `_run_haml_app47views47users47index46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (37.9ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 12:58:40) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+
+ActionView::TemplateError (undefined method `user_drawers_path' for #<ActionView::Base:0x102f2ad70>) on line #19 of app/views/users/index.html.haml:
+16:       %td= h user.id
+17:       %td= h user.username
+18:       %td= h user.role
+19:       %td= link_to user.drawers.count, user_drawers_path(user)
+20:       
+21:       %td= link_to 'Show', user
+22:       -if can? :manage, :users
+
+    app/views/users/index.html.haml:19:in `_run_haml_app47views47users47index46html46haml'
+    app/views/users/index.html.haml:14:in `each'
+    app/views/users/index.html.haml:14:in `_run_haml_app47views47users47index46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 13:03:22) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+Completed in 28ms (View: 11, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 13:03:34) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 34ms (View: 27, DB: 1) | 200 OK [http://localhost/users/1/drawers]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 13:03:37) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+Completed in 83ms (View: 66, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 13:04:40) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".user_id = 1) [0m
+Completed in 42ms (View: 23, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:04:43) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mTab Load (0.6ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 92ms (View: 86, DB: 1) | 200 OK [http://localhost/users/1/tabs]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-15 13:04:46) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mTransaction Load (0.6ms)[0m   [0;1mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 25ms (View: 19, DB: 1) | 200 OK [http://localhost/users/1/transactions]
+
+
+Processing PurchasesController#index (for 127.0.0.1 at 2010-08-15 13:04:51) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mPurchase Load (0.6ms)[0m   [0;1mSELECT * FROM "purchases" [0m
+Rendering template within layouts/application
+Rendering purchases/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 89ms (View: 84, DB: 1) | 200 OK [http://localhost/users/1/purchases]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 13:06:21) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".user_id = 1) [0m
+Completed in 35ms (View: 18, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-08-15 13:06:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+
+ActionView::TemplateError (undefined local variable or method `user' for #<ActionView::Base:0x1036912a8>) on line #14 of app/views/users/show.html.haml:
+11:   =h @user.password
+12: %p
+13:   %strong Drawers:
+14:   = link_to user.drawers.count, user_drawers_path(@user)
+15: %p
+16:   %strong Tabs:
+17:   = link_to user.tabs.count, user_tabs_path(@user)
+
+    app/views/users/show.html.haml:14:in `_run_haml_app47views47users47show46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (35.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-08-15 13:06:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".user_id = 1) [0m
+Completed in 108ms (View: 23, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing PurchasesController#index (for 127.0.0.1 at 2010-08-15 13:06:46) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mPurchase Load (0.6ms)[0m   [0;1mSELECT * FROM "purchases" [0m
+Rendering template within layouts/application
+Rendering purchases/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/users/1/purchases]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-15 13:06:49) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mTransaction Load (0.6ms)[0m   [0;1mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/users/1/transactions]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-15 13:14:15) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".user_id = 1) [0m
+Completed in 92ms (View: 75, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-15 13:14:22) [GET]
+  [4;36;1mDrawer Load (0.7ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 28ms (View: 22, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing DrawersController#new (for 127.0.0.1 at 2010-08-15 13:14:25) [GET]
+Rendering template within layouts/application
+Rendering drawers/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendered drawers/_form (82.9ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 101ms (View: 95, DB: 1) | 200 OK [http://localhost/drawers/new]
+
+
+Processing DrawersController#create (for 127.0.0.1 at 2010-08-15 13:14:28) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "drawer"=>{"user_id"=>"1"}}
+  [4;36;1mDrawer Create (0.4ms)[0m   [0;1mINSERT INTO "drawers" ("created_at", "updated_at", "user_id", "closed_at") VALUES('2010-08-15 20:14:28', '2010-08-15 20:14:28', 1, NULL)[0m
+Redirected to http://localhost:3000/drawers/4
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/drawers]
+
+
+Processing DrawersController#show (for 127.0.0.1 at 2010-08-15 13:14:28) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mDrawer Load (0.2ms)[0m   [0mSELECT * FROM "drawers" WHERE ("drawers"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering drawers/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 4) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 34ms (View: 27, DB: 1) | 200 OK [http://localhost/drawers/4]
+  [4;36;1mDrawer Load (0.6ms)[0m   [0;1mSELECT * FROM "drawers" ORDER BY drawers.id DESC LIMIT 1[0m
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:17:47) [GET]
+  [4;35;1mTab Load (0.6ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 13:17:49) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mDrawer Load (0.3ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (85.2ms)
+Completed in 99ms (View: 92, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 13:20:45) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mDrawer Load (0.4ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #14 of app/views/tabs/_form.html.haml:
+11:   %p
+12:     = f.label :Type
+13:     %br
+14:     = f.select tab_types
+15:   %p
+16:     = f.submit "Submit"
+
+    app/views/tabs/_form.html.haml:14:in `select'
+    app/views/tabs/_form.html.haml:14:in `_run_haml_app47views47tabs47_form46html46haml_locals_form_object'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:202:in `call'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:202:in `form_for'
+    haml (2.2.23) lib/haml/helpers.rb:573:in `call'
+    haml (2.2.23) lib/haml/helpers.rb:573:in `haml_bind_proc'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:208:in `form_for'
+    app/views/tabs/_form.html.haml:1:in `_run_haml_app47views47tabs47_form46html46haml_locals_form_object'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.23) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/tabs/new.html.haml:3:in `_run_haml_app47views47tabs47new46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (48.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 13:21:01) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mDrawer Load (0.3ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (101.5ms)
+Completed in 113ms (View: 106, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#create (for 127.0.0.1 at 2010-08-15 13:21:08) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "tab"=>{"name"=>"Joe", "user_id"=>"1", "type_helper"=>"Sale", "drawer_id"=>"2"}}
+  [4;35;1mTab Create (0.3ms)[0m   [0mINSERT INTO "tabs" ("name", "created_at", "updated_at", "user_id", "type", "closed_at", "drawer_id") VALUES('Joe', '2010-08-15 20:21:08', '2010-08-15 20:21:08', 1, 'Sale', NULL, 2)[0m
+Redirected to http://localhost:3000/tabs/1
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tabs]
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 13:21:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 94ms (View: 86, DB: 1) | 200 OK [http://localhost/tabs/1]
+  [4;35;1mTab Load (0.3ms)[0m   [0mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;36;1mTab Load (0.4ms)[0m   [0;1mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;36;1mTab Load (0.6ms)[0m   [0;1mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;36;1mTab Load (0.6ms)[0m   [0;1mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;35;1mTab Load (0.5ms)[0m   [0mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;36;1mTab Load (0.4ms)[0m   [0;1mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;36;1mTab Load (0.6ms)[0m   [0;1mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;35;1mTab Load (0.4ms)[0m   [0mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;36;1mTab Load (0.6ms)[0m   [0;1mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mTab Load (0.5ms)[0m   [0mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 13:32:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 104ms (View: 91, DB: 1) | 200 OK [http://localhost/tabs/1]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:33:18) [GET]
+  [4;36;1mTab Load (0.7ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 47ms (View: 38, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:33:38) [GET]
+  [4;36;1mTab Load (0.7ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 41ms (View: 31, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:33:49) [GET]
+  [4;36;1mTab Load (0.7ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 103ms (View: 94, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:35:09) [GET]
+  [4;36;1mTab Load (0.7ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 99ms (View: 90, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:35:16) [GET]
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 39ms (View: 30, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 13:35:20) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mDrawer Load (0.3ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (26.1ms)
+Completed in 108ms (View: 34, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#create (for 127.0.0.1 at 2010-08-15 13:35:40) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "tab"=>{"name"=>"", "user_id"=>"1", "type_helper"=>"Register", "drawer_id"=>"2"}}
+  [4;35;1mTab Create (0.4ms)[0m   [0mINSERT INTO "tabs" ("name", "created_at", "updated_at", "user_id", "type", "closed_at", "drawer_id") VALUES('', '2010-08-15 20:35:40', '2010-08-15 20:35:40', 1, 'Register', NULL, 2)[0m
+Redirected to http://localhost:3000/tabs/2
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tabs]
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 13:35:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 26ms (View: 17, DB: 0) | 200 OK [http://localhost/tabs/2]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:35:41) [GET]
+  [4;36;1mTab Load (0.7ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 2) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 97ms (View: 86, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:38:59) [GET]
+  [4;36;1mTab Load (0.7ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 2) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 39ms (View: 28, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 13:39:00) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mDrawer Load (0.3ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (24.9ms)
+Completed in 99ms (View: 92, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#create (for 127.0.0.1 at 2010-08-15 13:39:12) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "tab"=>{"name"=>"Jop", "user_id"=>"1", "type_helper"=>"Bull", "drawer_id"=>"2"}}
+  [4;36;1mTab Create (0.3ms)[0m   [0;1mINSERT INTO "tabs" ("name", "created_at", "updated_at", "user_id", "type", "closed_at", "drawer_id") VALUES('Jop', '2010-08-15 20:39:12', '2010-08-15 20:39:12', 1, 'Bull', NULL, 2)[0m
+Redirected to http://localhost:3000/tabs/3
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tabs]
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 13:39:12) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mTab Load (0.2ms)[0m   [0mSELECT * FROM "tabs" WHERE ("tabs"."id" = 3) [0m
+
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'Bull'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Tab.inheritance_column to use another column for that information.):
+  app/controllers/tabs_controller.rb:7:in `show'
+  haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (32.1ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TabsController#create (for 127.0.0.1 at 2010-08-15 13:39:23) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "tab"=>{"name"=>"Jop", "user_id"=>"1", "type_helper"=>"Quick", "drawer_id"=>"2"}}
+  [4;36;1mTab Create (0.3ms)[0m   [0;1mINSERT INTO "tabs" ("name", "created_at", "updated_at", "user_id", "type", "closed_at", "drawer_id") VALUES('Jop', '2010-08-15 20:39:23', '2010-08-15 20:39:23', 1, 'Quick', NULL, 2)[0m
+Redirected to http://localhost:3000/tabs/4
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tabs]
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 13:39:23) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mTab Load (0.2ms)[0m   [0mSELECT * FROM "tabs" WHERE ("tabs"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+
+ActionView::TemplateError (undefined method `quick_path' for #<ActionView::Base:0x102e59360>) on line #22 of app/views/tabs/show.html.haml:
+19: %p
+20:   = link_to "Edit", edit_tab_path(@tab)
+21:   |
+22:   = link_to "Destroy", @tab, :confirm => 'Are you sure?', :method => :delete
+23:   |
+24:   = link_to "View All", tabs_path
+
+    app/views/tabs/show.html.haml:22:in `_run_haml_app47views47tabs47show46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (37.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 13:40:08) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 25ms (View: 16, DB: 0) | 200 OK [http://localhost/tabs/4]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:40:10) [GET]
+  [4;36;1mTab Load (0.9ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'Bull'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Tab.inheritance_column to use another column for that information.):
+  app/controllers/tabs_controller.rb:3:in `index'
+  haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (93.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mTab Load (0.5ms)[0m   [0;1mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;35;1mQuick Destroy (0.4ms)[0m   [0mDELETE FROM "tabs" WHERE "id" = 4[0m
+  [4;36;1mTab Load (0.5ms)[0m   [0;1mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;35;1mTab Load (0.4ms)[0m   [0mSELECT * FROM "tabs" ORDER BY tabs.id DESC LIMIT 1[0m
+  [4;36;1mTab Destroy (0.3ms)[0m   [0;1mDELETE FROM "tabs" WHERE "id" = 3[0m
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:41:09) [GET]
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 2) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 38ms (View: 27, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#destroy (for 127.0.0.1 at 2010-08-15 13:41:14) [DELETE]
+  Parameters: {"authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "id"=>"2"}
+  [4;35;1mTab Load (0.2ms)[0m   [0mSELECT * FROM "tabs" WHERE ("tabs"."id" = 2) [0m
+  [4;36;1mRegister Destroy (0.2ms)[0m   [0;1mDELETE FROM "tabs" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/tabs
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/registers/2]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 13:41:14) [GET]
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing PurchasesController#index (for 127.0.0.1 at 2010-08-15 13:41:23) [GET]
+  Parameters: {"tab_id"=>"1"}
+  [4;35;1mPurchase Load (0.6ms)[0m   [0mSELECT * FROM "purchases" [0m
+Rendering template within layouts/application
+Rendering purchases/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/tabs/1/purchases]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-15 13:41:27) [GET]
+  Parameters: {"tab_id"=>"1"}
+  [4;35;1mTransaction Load (0.6ms)[0m   [0mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 25ms (View: 20, DB: 1) | 200 OK [http://localhost/tabs/1/transactions]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:01:43) [GET]
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 398ms (View: 389, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:02:03) [GET]
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 95ms (View: 86, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 14:02:04) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mDrawer Load (0.3ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (22.2ms)
+Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#create (for 127.0.0.1 at 2010-08-15 14:02:08) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "tab"=>{"name"=>"Slim", "user_id"=>"1", "type_helper"=>"Quick", "drawer_id"=>"2"}}
+WARNING: Can't mass-assign these protected attributes: type_helper
+  [4;35;1mTab Create (0.3ms)[0m   [0mINSERT INTO "tabs" ("name", "created_at", "updated_at", "user_id", "type", "closed_at", "drawer_id") VALUES('Slim', '2010-08-15 21:02:08', '2010-08-15 21:02:08', 1, NULL, NULL, 2)[0m
+Redirected to http://localhost:3000/tabs/5
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tabs]
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 14:02:08) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://localhost/tabs/5]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:02:09) [GET]
+  [4;36;1mTab Load (0.7ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 5) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 5) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 99ms (View: 90, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:02:39) [GET]
+
+SyntaxError (/Users/justin/Desktop/Rails/RailsPOS/app/models/tab.rb:7: syntax error, unexpected ':', expecting kEND
+  attr_accessible :name, :user_id, :closed_at, :type :drawer_id
+                                                      ^):
+  app/controllers/tabs_controller.rb:3:in `index'
+  haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:02:59) [GET]
+  [4;36;1mTab Load (0.8ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 5) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 5) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 38ms (View: 28, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 14:03:02) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mDrawer Load (0.3ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (86.7ms)
+Completed in 97ms (View: 90, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#create (for 127.0.0.1 at 2010-08-15 14:03:07) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "tab"=>{"name"=>"Spill", "type"=>"Quick", "user_id"=>"1", "drawer_id"=>"2"}}
+WARNING: Can't mass-assign these protected attributes: type
+  [4;36;1mTab Create (0.3ms)[0m   [0;1mINSERT INTO "tabs" ("name", "created_at", "updated_at", "user_id", "type", "closed_at", "drawer_id") VALUES('Spill', '2010-08-15 21:03:07', '2010-08-15 21:03:07', 1, NULL, NULL, 2)[0m
+Redirected to http://localhost:3000/tabs/6
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tabs]
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 14:03:07) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mTab Load (0.2ms)[0m   [0mSELECT * FROM "tabs" WHERE ("tabs"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 87ms (View: 80, DB: 1) | 200 OK [http://localhost/tabs/6]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:03:09) [GET]
+  [4;35;1mTab Load (0.8ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 5) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 5) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 6) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 6) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 39ms (View: 29, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 14:03:16) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mDrawer Load (0.3ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (23.9ms)
+Completed in 97ms (View: 25, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#create (for 127.0.0.1 at 2010-08-15 14:03:20) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "tab"=>{"name"=>"Joker", "type"=>"Quick", "user_id"=>"1", "drawer_id"=>"2"}}
+WARNING: Can't mass-assign these protected attributes: type
+  [4;35;1mTab Create (0.3ms)[0m   [0mINSERT INTO "tabs" ("name", "created_at", "updated_at", "user_id", "type", "closed_at", "drawer_id") VALUES('Joker', '2010-08-15 21:03:20', '2010-08-15 21:03:20', 1, NULL, NULL, 2)[0m
+Redirected to http://localhost:3000/tabs/7
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tabs]
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 14:03:21) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 89ms (View: 17, DB: 1) | 200 OK [http://localhost/tabs/7]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:03:26) [GET]
+  [4;36;1mTab Load (0.9ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 5) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 5) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 6) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 6) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 7) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 7) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 98ms (View: 88, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 14:03:43) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mDrawer Load (0.3ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (24.9ms)
+Completed in 36ms (View: 29, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#create (for 127.0.0.1 at 2010-08-15 14:03:53) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "tab"=>{"name"=>"Batman", "user_id"=>"1", "type_helper"=>"Quick", "drawer_id"=>"2"}}
+  [4;36;1mTab Create (0.3ms)[0m   [0;1mINSERT INTO "tabs" ("name", "created_at", "updated_at", "user_id", "type", "closed_at", "drawer_id") VALUES('Batman', '2010-08-15 21:03:53', '2010-08-15 21:03:53', 1, 'Quick', NULL, 2)[0m
+Redirected to http://localhost:3000/tabs/8
+Completed in 81ms (DB: 0) | 302 Found [http://localhost/tabs]
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 14:03:53) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mTab Load (0.2ms)[0m   [0mSELECT * FROM "tabs" WHERE ("tabs"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/tabs/8]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:03:55) [GET]
+  [4;35;1mTab Load (0.9ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 5) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 5) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 6) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 6) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 7) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 7) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 8) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 8) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 106ms (View: 94, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#destroy (for 127.0.0.1 at 2010-08-15 14:03:58) [DELETE]
+  Parameters: {"authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "id"=>"5"}
+  [4;35;1mTab Load (0.2ms)[0m   [0mSELECT * FROM "tabs" WHERE ("tabs"."id" = 5) [0m
+  [4;36;1mTab Destroy (0.2ms)[0m   [0;1mDELETE FROM "tabs" WHERE "id" = 5[0m
+Redirected to http://localhost:3000/tabs
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tabs/5]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:03:58) [GET]
+  [4;35;1mTab Load (0.9ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 6) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 6) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 7) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 7) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 8) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 8) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 110ms (View: 98, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#destroy (for 127.0.0.1 at 2010-08-15 14:04:06) [DELETE]
+  Parameters: {"authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "id"=>"6"}
+  [4;35;1mTab Load (0.2ms)[0m   [0mSELECT * FROM "tabs" WHERE ("tabs"."id" = 6) [0m
+  [4;36;1mTab Destroy (0.2ms)[0m   [0;1mDELETE FROM "tabs" WHERE "id" = 6[0m
+Redirected to http://localhost:3000/tabs
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tabs/6]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:04:06) [GET]
+  [4;35;1mTab Load (0.8ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 7) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 7) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 8) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 8) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 104ms (View: 93, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#destroy (for 127.0.0.1 at 2010-08-15 14:04:07) [DELETE]
+  Parameters: {"authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "id"=>"7"}
+  [4;35;1mTab Load (0.2ms)[0m   [0mSELECT * FROM "tabs" WHERE ("tabs"."id" = 7) [0m
+  [4;36;1mTab Destroy (0.2ms)[0m   [0;1mDELETE FROM "tabs" WHERE "id" = 7[0m
+Redirected to http://localhost:3000/tabs
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tabs/7]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:04:07) [GET]
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 8) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 8) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 104ms (View: 93, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#destroy (for 127.0.0.1 at 2010-08-15 14:04:13) [DELETE]
+  Parameters: {"authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "id"=>"8"}
+  [4;35;1mTab Load (0.2ms)[0m   [0mSELECT * FROM "tabs" WHERE ("tabs"."id" = 8) [0m
+  [4;36;1mQuick Destroy (0.2ms)[0m   [0;1mDELETE FROM "tabs" WHERE "id" = 8[0m
+Redirected to http://localhost:3000/tabs
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/quicks/8]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:04:13) [GET]
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 96ms (View: 87, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-15 14:04:23) [GET]
+  [4;35;1mTransaction Load (0.6ms)[0m   [0mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/transactions]
+
+
+Processing PurchasesController#index (for 127.0.0.1 at 2010-08-15 14:04:24) [GET]
+  [4;35;1mPurchase Load (0.6ms)[0m   [0mSELECT * FROM "purchases" [0m
+Rendering template within layouts/application
+Rendering purchases/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 85ms (View: 79, DB: 1) | 200 OK [http://localhost/purchases]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-15 14:04:25) [GET]
+  [4;35;1mTransaction Load (0.6ms)[0m   [0mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/transactions]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:04:27) [GET]
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 98ms (View: 89, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 14:05:01) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mDrawer Load (0.3ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (22.2ms)
+Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 14:06:01) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+
+ActionView::TemplateError (undefined method `name' for #<User:0x103407be0>) on line #10 of app/views/tabs/_form.html.haml:
+7:   %p
+8:     = f.label 'Cashier'
+9:     %br  
+10:     = f.collection_select :user_id, User.all, :name, :id
+11:   %p
+12:     = f.label :Drawer
+13:     = f.collection_select :drawer_id, Drawer.all, :id, :id
+
+    app/views/tabs/_form.html.haml:10:in `_run_haml_app47views47tabs47_form46html46haml_locals_form_object'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:202:in `call'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:202:in `form_for'
+    haml (2.2.23) lib/haml/helpers.rb:573:in `call'
+    haml (2.2.23) lib/haml/helpers.rb:573:in `haml_bind_proc'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:208:in `form_for'
+    app/views/tabs/_form.html.haml:1:in `_run_haml_app47views47tabs47_form46html46haml_locals_form_object'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.23) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/tabs/new.html.haml:3:in `_run_haml_app47views47tabs47new46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (113.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 14:07:48) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mDrawer Load (0.3ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (21.4ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 36ms (View: 29, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 14:07:59) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mDrawer Load (0.3ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (22.2ms)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 37ms (View: 30, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 14:08:12) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mDrawer Load (0.3ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (23.9ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 101ms (View: 94, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#create (for 127.0.0.1 at 2010-08-15 14:09:28) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "tab"=>{"name"=>"Joseph", "user_id"=>"1", "type_helper"=>"Sale", "drawer_id"=>"2"}}
+  [4;35;1mTab Create (0.3ms)[0m   [0mINSERT INTO "tabs" ("name", "created_at", "updated_at", "user_id", "type", "closed_at", "drawer_id") VALUES('Joseph', '2010-08-15 21:09:28', '2010-08-15 21:09:28', 1, 'Sale', NULL, 2)[0m
+Redirected to http://localhost:3000/tabs/9
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tabs]
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 14:09:28) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 182ms (View: 20, DB: 1) | 200 OK [http://localhost/tabs/9]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:09:30) [GET]
+  [4;36;1mTab Load (0.8ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 9) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 9) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 35ms (View: 26, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing PurchasesController#index (for 127.0.0.1 at 2010-08-15 14:09:33) [GET]
+  Parameters: {"tab_id"=>"9"}
+  [4;36;1mPurchase Load (0.6ms)[0m   [0;1mSELECT * FROM "purchases" [0m
+Rendering template within layouts/application
+Rendering purchases/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/tabs/9/purchases]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-15 14:09:37) [GET]
+  Parameters: {"tab_id"=>"9"}
+  [4;36;1mTransaction Load (0.6ms)[0m   [0;1mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/tabs/9/transactions]
+
+
+Processing TabsController#destroy (for 127.0.0.1 at 2010-08-15 14:09:46) [DELETE]
+  Parameters: {"authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "id"=>"1"}
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 1) [0m
+  [4;35;1mSale Destroy (0.2ms)[0m   [0mDELETE FROM "tabs" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/tabs
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/sales/1]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:09:46) [GET]
+  [4;36;1mTab Load (0.7ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 9) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 9) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#new (for 127.0.0.1 at 2010-08-15 14:09:47) [GET]
+Rendering template within layouts/application
+Rendering tabs/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mDrawer Load (0.3ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendered tabs/_form (20.5ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 96ms (View: 25, DB: 1) | 200 OK [http://localhost/tabs/new]
+
+
+Processing TabsController#create (for 127.0.0.1 at 2010-08-15 14:10:12) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "tab"=>{"name"=>"Samuel", "user_id"=>"1", "type_helper"=>"Sale", "drawer_id"=>"2"}}
+  [4;35;1mTab Create (0.3ms)[0m   [0mINSERT INTO "tabs" ("name", "created_at", "updated_at", "user_id", "type", "closed_at", "drawer_id") VALUES('Samuel', '2010-08-15 21:10:12', '2010-08-15 21:10:12', 1, 'Sale', NULL, 2)[0m
+Redirected to http://localhost:3000/tabs/10
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tabs]
+
+
+Processing TabsController#show (for 127.0.0.1 at 2010-08-15 14:10:12) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering tabs/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 90ms (View: 17, DB: 0) | 200 OK [http://localhost/tabs/10]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-15 14:10:13) [GET]
+  [4;36;1mTab Load (0.8ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 9) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 9) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 10) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 10) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 35ms (View: 26, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 14:10:23) [GET]
+  [4;36;1mBottle Load (0.8ms)[0m   [0;1mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 2 AND "versions".versioned_type = 'Bottle') [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 41ms (View: 31, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing DraughtsController#index (for 127.0.0.1 at 2010-08-15 14:10:28) [GET]
+  [4;35;1mDraught Load (0.6ms)[0m   [0mSELECT * FROM "draughts" [0m
+Rendering template within layouts/application
+Rendering draughts/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 93ms (View: 85, DB: 1) | 200 OK [http://localhost/draughts]
+
+
+Processing DraughtsController#new (for 127.0.0.1 at 2010-08-15 14:10:29) [GET]
+Rendering template within layouts/application
+Rendering draughts/new
+
+ActionView::TemplateError (undefined method `excise_tax' for #<Draught:0x103399398>) on line #54 of app/views/draughts/_form.html.haml:
+51:   %p
+52:     = f.label :excise_tax
+53:     %br
+54:     = f.text_field :excise_tax
+55:   %p
+56:     = f.label :price
+57:     %br
+
+    app/views/draughts/_form.html.haml:54:in `_run_haml_app47views47draughts47_form46html46haml_locals_form_object'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:202:in `call'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:202:in `form_for'
+    haml (2.2.23) lib/haml/helpers.rb:573:in `call'
+    haml (2.2.23) lib/haml/helpers.rb:573:in `haml_bind_proc'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:208:in `form_for'
+    app/views/draughts/_form.html.haml:1:in `_run_haml_app47views47draughts47_form46html46haml_locals_form_object'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.23) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/draughts/new.html.haml:3:in `_run_haml_app47views47draughts47new46html46haml'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.23) rails/./lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (122.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-15 14:10:33) [GET]
+  [4;35;1mBottle Load (0.8ms)[0m   [0mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 2 AND "versions".versioned_type = 'Bottle') [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/bottles]
+
+
+Processing BottlesController#new (for 127.0.0.1 at 2010-08-15 14:10:35) [GET]
+Rendering template within layouts/application
+Rendering bottles/new
+Rendered bottles/_form (15.0ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 113ms (View: 36, DB: 0) | 200 OK [http://localhost/bottles/new]
+
+
+Processing DraughtsController#index (for 127.0.0.1 at 2010-08-15 14:10:41) [GET]
+  [4;35;1mDraught Load (0.6ms)[0m   [0mSELECT * FROM "draughts" [0m
+Rendering template within layouts/application
+Rendering draughts/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/draughts]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-15 14:11:14) [GET]
+  [4;35;1mTransaction Load (0.6ms)[0m   [0mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/transactions]
+
+
+Processing TransactionsController#new (for 127.0.0.1 at 2010-08-15 14:11:16) [GET]
+Rendering template within layouts/application
+Rendering transactions/new
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mTab Load (0.4ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendered transactions/_form (89.7ms)
+Completed in 103ms (View: 97, DB: 1) | 200 OK [http://localhost/transactions/new]
+
+
+Processing TransactionsController#new (for 127.0.0.1 at 2010-08-15 14:16:58) [GET]
+Rendering template within layouts/application
+Rendering transactions/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;36;1mTab Load (0.4ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendered transactions/_form (96.2ms)
+Completed in 106ms (View: 100, DB: 1) | 200 OK [http://localhost/transactions/new]
+
+
+Processing TransactionsController#new (for 127.0.0.1 at 2010-08-15 14:17:10) [GET]
+Rendering template within layouts/application
+Rendering transactions/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+  [4;35;1mTab Load (0.4ms)[0m   [0mSELECT * FROM "tabs" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendered transactions/_form (95.1ms)
+Completed in 106ms (View: 99, DB: 1) | 200 OK [http://localhost/transactions/new]
+
+
+Processing TransactionsController#create (for 127.0.0.1 at 2010-08-15 14:17:22) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"+mBBtVMC+/wEKbYqMBaN3hFcyc95mQRfc7cb4pjsC8Q=", "transaction"=>{"amount"=>"10", "user_id"=>"1", "type_helper"=>"CashDeposit", "tab_id"=>"9"}}
+  [4;35;1mTransaction Create (0.3ms)[0m   [0mINSERT INTO "transactions" ("created_at", "updated_at", "amount", "type", "user_id", "tab_id") VALUES('2010-08-15 21:17:22', '2010-08-15 21:17:22', 1000, 'CashDeposit', 1, 9)[0m
+Redirected to http://localhost:3000/transactions/1
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/transactions]
+
+
+Processing TransactionsController#show (for 127.0.0.1 at 2010-08-15 14:17:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTransaction Load (0.2ms)[0m   [0;1mSELECT * FROM "transactions" WHERE ("transactions"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering transactions/show
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 9) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 37ms (View: 28, DB: 1) | 200 OK [http://localhost/transactions/1]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-15 14:17:24) [GET]
+  [4;36;1mTransaction Load (0.7ms)[0m   [0;1mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 9) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
+Completed in 120ms (View: 112, DB: 1) | 200 OK [http://localhost/transactions]

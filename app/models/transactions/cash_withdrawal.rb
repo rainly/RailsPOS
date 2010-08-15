@@ -1,0 +1,3 @@
+class CashWithdrawal < Transaction
+  
+end

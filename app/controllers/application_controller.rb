@@ -17,7 +17,18 @@ class ApplicationController < ActionController::Base
   helper_method :beer_glasses
   helper_method :county_tax
   
+  helper_method :tab_types
+  helper_method :transaction_types
+  
   private
+  
+  def tab_types
+     ["Quick", "Sale", "Register", "Bull"]
+  end
+  
+  def transaction_types
+     ["CashDeposit", "CreditDeposit", "CashWithdrawal", "CashDeposit"]
+  end
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)

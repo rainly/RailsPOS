@@ -9,6 +9,18 @@
 %p
   %strong Password:
   =h @user.password
+%p
+  %strong Drawers:
+  = link_to @user.drawers.count, user_drawers_path(@user)
+%p
+  %strong Tabs:
+  = link_to @user.tabs.count, user_tabs_path(@user)
+%p
+  %strong Transactions:
+  = link_to @user.transactions.count, user_transactions_path(@user)
+%p
+  %strong Purchases:
+  = link_to @user.purchases.count, user_purchases_path(@user)
 
 %p
   = link_to "Edit", edit_user_path(@user)
