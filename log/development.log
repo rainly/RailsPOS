@@ -15552,3 +15552,288 @@ Rendering transactions/index
   [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 9) [0m
   [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca46ab5c14f73c623a665ff93cfe0c0e87b1a29b5dcd55270dacbb9512ed040f25d4d8bd605a3ce7be22943ef309e7b94cd6e57ce2839a763be1e17e012e438b') LIMIT 1[0m
 Completed in 120ms (View: 112, DB: 1) | 200 OK [http://localhost/transactions]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-16 19:50:16) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".user_id = 1) [0m
+Completed in 104ms (View: 84, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PurchasesController#index (for 127.0.0.1 at 2010-08-16 19:50:20) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mPurchase Load (0.5ms)[0m   [0mSELECT * FROM "purchases" [0m
+Rendering template within layouts/application
+Rendering purchases/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/users/1/purchases]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-16 19:50:22) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mTransaction Load (1.1ms)[0m   [0;1mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 9) [0m
+Completed in 138ms (View: 130, DB: 2) | 200 OK [http://localhost/users/1/transactions]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-16 19:50:25) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 9) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 9) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 10) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 10) [0m
+Completed in 37ms (View: 28, DB: 1) | 200 OK [http://localhost/users/1/tabs]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-16 19:50:28) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mDrawer Load (0.6ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 4) [0m
+Completed in 31ms (View: 25, DB: 1) | 200 OK [http://localhost/users/1/drawers]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-16 19:50:30) [GET]
+  Parameters: {"drawer_id"=>"2"}
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 9) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 9) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 10) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 10) [0m
+Completed in 78ms (View: 70, DB: 1) | 200 OK [http://localhost/drawers/2/tabs]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-16 19:50:38) [GET]
+  Parameters: {"tab_id"=>"9"}
+  [4;36;1mTransaction Load (0.6ms)[0m   [0;1mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 9) [0m
+Completed in 29ms (View: 22, DB: 1) | 200 OK [http://localhost/tabs/9/transactions]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-16 19:50:44) [GET]
+  [4;35;1mTransaction Load (0.6ms)[0m   [0mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mTab Load (0.2ms)[0m   [0mSELECT * FROM "tabs" WHERE ("tabs"."id" = 9) [0m
+Completed in 79ms (View: 72, DB: 1) | 200 OK [http://localhost/transactions]
+
+
+Processing PurchasesController#index (for 127.0.0.1 at 2010-08-16 19:50:45) [GET]
+  [4;36;1mPurchase Load (0.5ms)[0m   [0;1mSELECT * FROM "purchases" [0m
+Rendering template within layouts/application
+Rendering purchases/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/purchases]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-16 19:50:46) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".user_id = 1) [0m
+Completed in 83ms (View: 69, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-16 19:50:46) [GET]
+  [4;36;1mDrawer Load (0.7ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 4) [0m
+Completed in 27ms (View: 21, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-16 19:50:47) [GET]
+  [4;35;1mTab Load (0.7ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 9) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 9) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 10) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 10) [0m
+Completed in 85ms (View: 77, DB: 2) | 200 OK [http://localhost/tabs]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-16 19:50:47) [GET]
+  [4;36;1mTab Load (0.7ms)[0m   [0;1mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 9) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 9) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 10) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 10) [0m
+Completed in 30ms (View: 22, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-16 19:50:48) [GET]
+  [4;35;1mDrawer Load (0.7ms)[0m   [0mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 4) [0m
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-16 19:50:48) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".user_id = 1) [0m
+Completed in 78ms (View: 63, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-16 21:41:00) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".user_id = 1) [0m
+Completed in 105ms (View: 83, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-16 21:41:03) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drawers" WHERE ("drawers".user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".user_id = 1) [0m
+Completed in 31ms (View: 17, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing DrawersController#index (for 127.0.0.1 at 2010-08-16 21:41:03) [GET]
+  [4;36;1mDrawer Load (0.7ms)[0m   [0;1mSELECT * FROM "drawers" [0m
+Rendering template within layouts/application
+Rendering drawers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tabs" WHERE ("tabs".drawer_id = 4) [0m
+Completed in 85ms (View: 27, DB: 1) | 200 OK [http://localhost/drawers]
+
+
+Processing TabsController#index (for 127.0.0.1 at 2010-08-16 21:41:04) [GET]
+  [4;35;1mTab Load (0.9ms)[0m   [0mSELECT * FROM "tabs" [0m
+Rendering template within layouts/application
+Rendering tabs/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 9) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 9) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "purchases" WHERE ("purchases".tab_id = 10) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "transactions" WHERE ("transactions".tab_id = 10) [0m
+Completed in 104ms (View: 92, DB: 1) | 200 OK [http://localhost/tabs]
+
+
+Processing TransactionsController#index (for 127.0.0.1 at 2010-08-16 21:41:04) [GET]
+  [4;36;1mTransaction Load (0.6ms)[0m   [0;1mSELECT * FROM "transactions" [0m
+Rendering template within layouts/application
+Rendering transactions/index
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mTab Load (0.2ms)[0m   [0;1mSELECT * FROM "tabs" WHERE ("tabs"."id" = 9) [0m
+Completed in 80ms (View: 73, DB: 1) | 200 OK [http://localhost/transactions]
+
+
+Processing PurchasesController#index (for 127.0.0.1 at 2010-08-16 21:41:05) [GET]
+  [4;35;1mPurchase Load (0.5ms)[0m   [0mSELECT * FROM "purchases" [0m
+Rendering template within layouts/application
+Rendering purchases/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/purchases]
+
+
+Processing BottlesController#index (for 127.0.0.1 at 2010-08-16 21:41:05) [GET]
+  [4;36;1mBottle Load (0.7ms)[0m   [0;1mSELECT * FROM "bottles" [0m
+Rendering template within layouts/application
+Rendering bottles/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT max("versions".number) AS max_number FROM "versions" WHERE ("versions".versioned_id = 2 AND "versions".versioned_type = 'Bottle') [0m
+Completed in 34ms (View: 24, DB: 2) | 200 OK [http://localhost/bottles]
+
+
+Processing DraughtsController#index (for 127.0.0.1 at 2010-08-16 21:41:06) [GET]
+  [4;36;1mDraught Load (0.5ms)[0m   [0;1mSELECT * FROM "draughts" [0m
+Rendering template within layouts/application
+Rendering draughts/index
+Completed in 24ms (View: 18, DB: 1) | 200 OK [http://localhost/draughts]
+
+
+Processing FoodsController#index (for 127.0.0.1 at 2010-08-16 21:41:07) [GET]
+  [4;35;1mFood Load (0.5ms)[0m   [0mSELECT * FROM "foods" [0m
+Rendering template within layouts/application
+Rendering foods/index
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://localhost/foods]
+
+
+Processing MiscsController#index (for 127.0.0.1 at 2010-08-16 21:41:08) [GET]
+  [4;36;1mMisc Load (0.5ms)[0m   [0;1mSELECT * FROM "miscs" [0m
+Rendering template within layouts/application
+Rendering miscs/index
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/miscs]
+
+
+Processing IpadsController#index (for 127.0.0.1 at 2010-08-16 21:41:11) [GET]
+Rendering template within layouts/ipad
+Rendering ipads/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #6 of app/views/ipads/index.html.haml:
+3: %table
+4:   %tr
+5:     %th Name
+6:   - for ipad in @ipads
+7:     %tr
+8:       %td= h ipad.name
+9:       %td= link_to 'Show', ipad
+
+    app/views/ipads/index.html.haml:6:in `_run_haml_app47views47ipads47index46html46haml'
+    haml (3.0.16) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.16) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.16) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (86.3ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing IpadsController#index (for 127.0.0.1 at 2010-08-16 21:42:00) [GET]
+Rendering template within layouts/ipad
+Rendering ipads/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/ipad]

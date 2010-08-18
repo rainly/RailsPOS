@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.login "ipad", :controller => "ipads", :action => "index"
 
   map.resources :drawers, :has_many => :tabs
   map.resources :purchases
