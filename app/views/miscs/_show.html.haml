@@ -1,0 +1,16 @@
+- if @misc
+  %span.tab_name= @misc.display_name
+  #tab_list
+    #rightscroller
+      %ul
+        %li
+          %span.name
+            = link_to_unless (@misc.info.blank?, "Information Link", @misc.info)  
+  #tab_info
+    %p.total_items= "Price #{number_to_currency @misc.price}"
+
+- else
+  %span.tab_name= "No Item Selected"
+  #tab_list
+    #rightscroller
+  #tab_info

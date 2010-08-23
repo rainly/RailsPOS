@@ -17,37 +17,31 @@
   =h @draught.country
 %p
   %strong Abv:
-  =h @draught.abv
+  =h number_to_percentage @draught.abv, :precision =>2
 %p
   %strong Source:
   =h @draught.source
 %p
   %strong Volume:
-  =h @draught.volume
-%p
-  %strong Volume Unit:
-  =h @draught.volume_unit
+  =h @draught.volume.to_s + " " + @draught.volume_unit
 %p
   %strong Keg Cost:
-  =h @draught.keg_cost
+  =h number_to_currency @draught.keg_cost
 %p
-  %strong Serving Size:
+  %strong Serving Size (ml):
   =h @draught.serving_size
 %p
-  %strong Cost:
-  =h @draught.cost
+  %strong Serving Cost
+  =h number_to_currency @draught.cost
 %p
   %strong Glass Type:
   =h @draught.glass_type
 %p
   %strong Sales Tax:
-  =h @draught.sales_tax
-%p
-  %strong Excise Tax:
-  =h @draught.excise_tax
+  =h number_to_percentage @draught.sales_tax, :precision =>2
 %p
   %strong Price:
-  =h @draught.price
+  =h number_to_currency @draught.price
 %p
   %strong Stock:
   =h @draught.stock

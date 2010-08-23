@@ -5,14 +5,11 @@ class Purchase < ActiveRecord::Base
   
   attr_accessible :tab_id, :user_id, :purchasable_id, :purchasable_type, :alteration_user_id, :alteration, :price, :version
   
-  %w(price).each do |meth|
-    define_method(meth) do
-      self[meth.to_sym].to_f / 100
-    end
-
-    define_method("#{meth}=") do |amount|
-      self[meth.to_sym] = amount.to_f * 100
+  def price
+    if self.alteration.blank?
+      return self.purchasable.price
+    else
+      return self.alteration
     end
   end
-  
 end

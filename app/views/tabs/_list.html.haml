@@ -1,0 +1,2 @@
+%li{:class => cycle('odd', 'even'), :id => "tab_id_#{list.id}"}
+  = link_to_remote list.name.blank? ? 'No Name' : list.name, :url => {:controller => "tabs", :action => "show", :id => list.id}, :method => 'get'

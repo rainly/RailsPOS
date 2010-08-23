@@ -1,0 +1,9 @@
+#left_list
+  #leftscroller
+    %ul
+      %li= link_to_remote "Logout", :url => {:controller => "user_sessions", :action => "destroy"}, :method => "delete"
+      %li= link_to_remote "New Drawer", :url => {:controller => "drawers", :action => "new"}, :method => "get"
+      %li= link_to "Reopen Drawer", ipad_path
+      %li= link_to "Close Drawer", ipad_path
+      %li= link_to "Closed Tabs", ipad_path
+    

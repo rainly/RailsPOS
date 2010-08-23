@@ -17,7 +17,7 @@
   =h @bottle.country
 %p
   %strong Abv:
-  =h @bottle.abv
+  =h number_to_percentage @bottle.abv, :precision =>2
 %p
   %strong Style:
   =h @bottle.style
@@ -32,16 +32,16 @@
   =h @bottle.volume_unit
 %p
   %strong Cost:
-  =h @bottle.cost
+  =h number_to_currency @bottle.cost
 %p
   %strong Glass Type:
   =h @bottle.glass_type
 %p
   %strong Sales Tax:
-  =h @bottle.sales_tax
+  =h number_to_percentage @bottle.sales_tax, :precision =>2
 %p
   %strong Price:
-  =h @bottle.price
+  =h number_to_currency @bottle.price
 %p
   %strong Stock:
   =h @bottle.stock

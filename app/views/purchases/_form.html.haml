@@ -5,7 +5,9 @@
     = f.label :tab_id
     %br
     = f.collection_select :tab_id, @tabs, :id, :name
-    = f.hidden_field :purchasable_type, :value => :Food
-    = f.collection_select :purchasable_id, Food.all, :id, :display_name
+    %br
+    = f.select :purchasable_type, ["Food", "Bottle", "Draught", "Misc"]
+    %br
+    = f.collection_select :purchasable_id, Food.all+Bottle.all+Draught.all+Misc.all, :id, :display_name
   %p
     = f.submit "Submit"

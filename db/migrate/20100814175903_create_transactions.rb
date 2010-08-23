@@ -2,7 +2,7 @@ class CreateTransactions < ActiveRecord::Migration
   def self.up
     create_table :transactions do |t|
       t.string :type
-      t.integer :amount
+      t.decimal :amount, :precision => 10, :scale => 2
       t.references :user
       t.references :tab
       t.timestamps

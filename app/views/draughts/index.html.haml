@@ -9,14 +9,14 @@
     %th Abv
     %th Source
     %th Volume
-    %th Keg cost
-    %th Serving size
-    %th Cost
-    %th Glass type
-    %th Sales tax
-    %th Excise tax
+    %th Keg Cost
+    %th Serving Size
+    %th Serving Cost
+    %th Glass Type
+    %th Tax
     %th Price
     %th Stock
+    %th Info
     %th Display
   - for draught in @draughts
     %tr
@@ -32,12 +32,34 @@
       %td= h number_to_currency draught.cost
       %td= h draught.glass_type
       %td= h number_to_percentage draught.sales_tax, :precision => 2
-      %td= h number_to_percentage draught.excise_tax, :precision => 2
       %td= h number_to_currency draught.price
       %td= h draught.stock
+      %td= link_to_unless (draught.info.blank?, "Information", draught.info)
       %td= h draught.display
       %td= link_to 'Show', draught
       %td= link_to 'Edit', edit_draught_path(draught)
       %td= link_to 'Destroy', draught, :confirm => 'Are you sure?', :method => :delete
+      - unless draught.small_price.blank?
+        %tr
+          %td= h "Small " + draught.display_name
+          %td= h draught.full_name
+          %td= h draught.brewery
+          %td= h draught.country
+          %td= h number_to_percentage draught.abv, :precision => 2
+          %td= h draught.source
+          %td= h draught.volume.to_s + " " + draught.volume_unit
+          %td= h number_to_currency draught.keg_cost
+          %td= h draught.small_serving_size.to_s + " ml"
+          %td= h number_to_currency draught.small_cost
+          %td= h draught.small_glass_type
+          %td= h number_to_percentage draught.sales_tax, :precision => 2
+          %td= h number_to_currency draught.small_price
+          %td= h draught.stock
+          %td= link_to_unless (draught.info.blank?, "Information", draught.info)
+          %td= h draught.display
+          %td= link_to 'Show', draught
+          %td= link_to 'Edit', edit_draught_path(draught)
+          %td= link_to 'Destroy', draught, :confirm => 'Are you sure?', :method => :delete
+        
 
 %p= link_to "New Draught", new_draught_path

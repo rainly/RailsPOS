@@ -9,14 +9,18 @@ class CreateDraughts < ActiveRecord::Migration
       t.string :source
       t.float :volume
       t.string :volume_unit
-      t.integer :keg_cost
+      t.decimal :keg_cost, :precision => 10, :scale => 2
       t.integer :serving_size
+      t.integer :small_serving_size
       t.string :glass_type
+      t.string :small_glass_type
       t.float :sales_tax
       t.string :style
-      t.integer :price
+      t.decimal :price, :precision => 10, :scale => 2
+      t.decimal :small_price, :precision => 10, :scale => 2
       t.integer :stock
       t.boolean :display
+      t.string :info
       t.timestamps
     end
   end

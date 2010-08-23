@@ -13,12 +13,18 @@ class PurchasesController < ApplicationController
   end
   
   def create
-    @purchase = Purchase.new(params[:purchase])
-    if @purchase.save
-      flash[:notice] = "Successfully created purchase."
-      redirect_to @purchase
+    if !params[:ipad].blank?
+      @purchase = Purchase.new(params[:purchase])
+      @purchase.save
+      redirect_to :controller => 'tabs', :action => 'show', :id => @purchase.tab_id, :format => 'js'
     else
-      render :action => 'new'
+      @purchase = Purchase.new(params[:purchase])
+      if @purchase.save
+        flash[:notice] = "Successfully created purchase."
+        redirect_to @purchase
+      else
+        render :action => 'new'
+      end
     end
   end
   

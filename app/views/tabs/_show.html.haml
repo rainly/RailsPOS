@@ -1,0 +1,28 @@
+- if @tab
+  %span.tab_name= @tab.name
+  #tab_list
+    #rightscroller
+      - unless @tab.purchases.blank?
+        %ul
+          - @tab.purchases.each do |purchase|
+            %li{:id => "purchase_#{purchase.id}"}
+              %span.name
+                = link_to_remote purchase.purchasable.display_name, :url => {:controller => "ipads", :action => "edit", :id => purchase.id}, :method => "get"
+              %span.price&= number_to_currency purchase.purchasable.price
+              #option_box
+                - form_for purchase do |f|
+                  = f.error_messages
+                  %p
+                    = f.label "stuff"
+                    = f.select :alteration, ["Misring", "Comp", "Employee", "Reorder"]
+      - else
+        %p Empty tab, #{link_to_remote "delete?", :url => { :controller => 'tabs', :action => "destroy", :id => @tab.id }, :method => 'delete'}
+  #tab_info
+    %p.total_items= "Items #{@tab.purchases.count}"
+    %p.total_items= "Total #{number_to_currency @tab.total_sale}"
+
+- else
+  %span.tab_name= "No Tab Selected"
+  #tab_list
+    #rightscroller
+  #tab_info

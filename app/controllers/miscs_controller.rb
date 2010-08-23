@@ -1,10 +1,18 @@
 class MiscsController < ApplicationController
   def index
     @miscs = Misc.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def show
     @misc = Misc.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def new

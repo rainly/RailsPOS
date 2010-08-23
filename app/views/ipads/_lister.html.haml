@@ -1,0 +1,8 @@
+#left_list
+  #leftscroller
+    - if local_assigns.has_key? :list_items
+      -unless list_items.blank?
+        %ul
+          = render :partial => "list", :collection => list_items
+      -else
+        %p='Empty'

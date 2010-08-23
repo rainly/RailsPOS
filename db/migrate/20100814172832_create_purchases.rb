@@ -5,7 +5,7 @@ class CreatePurchases < ActiveRecord::Migration
       t.references :tab
       t.references :purchasable, :polymorphic => true
       t.string :alteration
-      t.integer :price
+      t.decimal :price, :precision => 10, :scale => 2
       t.integer :alteration_user_id
       t.boolean :ordered
       t.timestamps

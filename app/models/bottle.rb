@@ -4,13 +4,13 @@ class Bottle < ActiveRecord::Base
   has_many :purchases, :as => :purchasable
   has_many :tabs, :through => :purchasable 
   
-  attr_accessible :style, :display_name, :full_name, :brewery, :country, :abv, :source, :volume, :volume_unit, :cost, :glass_type, :sales_tax, :price, :stock, :display
+  attr_accessible :style, :display_name, :full_name, :brewery, :country, :abv, :source, :volume, :volume_unit, :cost, :glass_type, :sales_tax, :price, :stock, :display, :info
 
   validates_uniqueness_of :display_name
-  validates_presence_of :full_name, :brewery, :country, :abv, :style, :source, :volume, :volume_unit, :cost, :glass_type, :sales_tax, :price, :stock
+  validates_presence_of :display_name, :full_name, :brewery, :country, :abv, :style, :source, :volume, :volume_unit, :cost, :glass_type, :sales_tax, :price, :stock
   
   def revenue
-    self.price.to_f / (1 + self.sales_tax)
+    self.price.to_f / (1 + (self.sales_tax / 100))
   end
   
   def tax
@@ -25,13 +25,4 @@ class Bottle < ActiveRecord::Base
     self.profit / self.revenue * 100
   end
   
-  %w(price cost).each do |meth|
-    define_method(meth) do
-      self[meth.to_sym].to_f / 100
-    end
-
-    define_method("#{meth}=") do |amount|
-      self[meth.to_sym] = amount.to_f * 100
-    end
-  end
 end

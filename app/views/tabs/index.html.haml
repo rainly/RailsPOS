@@ -4,7 +4,8 @@
   %tr
     %th ID
     %th Name
-    %th User
+    %th Cashier
+    %th Drawer
     %th Closed At
     %th Type
     %th Purchases
@@ -13,7 +14,8 @@
     %tr
       %th= h tab.id
       %td= h tab.name
-      %td= h tab.user_id
+      %td= h tab.user.username
+      %th= link_to tab.drawer_id, drawer_path(tab.drawer_id)
       - if tab.open?
         %td= "Open"
       - else

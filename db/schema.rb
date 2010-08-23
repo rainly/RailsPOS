@@ -20,13 +20,14 @@ ActiveRecord::Schema.define(:version => 20100814175903) do
     t.string   "source"
     t.float    "volume"
     t.string   "volume_unit"
-    t.integer  "cost"
+    t.decimal  "cost",         :precision => 10, :scale => 2
     t.string   "glass_type"
     t.float    "sales_tax"
     t.string   "style"
-    t.integer  "price"
+    t.decimal  "price",        :precision => 10, :scale => 2
     t.integer  "stock"
     t.boolean  "display"
+    t.string   "info"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,14 +41,18 @@ ActiveRecord::Schema.define(:version => 20100814175903) do
     t.string   "source"
     t.float    "volume"
     t.string   "volume_unit"
-    t.integer  "keg_cost"
+    t.decimal  "keg_cost",           :precision => 10, :scale => 2
     t.integer  "serving_size"
+    t.integer  "small_serving_size"
     t.string   "glass_type"
+    t.string   "small_glass_type"
     t.float    "sales_tax"
     t.string   "style"
-    t.integer  "price"
+    t.decimal  "price",              :precision => 10, :scale => 2
+    t.decimal  "small_price",        :precision => 10, :scale => 2
     t.integer  "stock"
     t.boolean  "display"
+    t.string   "info"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,20 +66,22 @@ ActiveRecord::Schema.define(:version => 20100814175903) do
 
   create_table "foods", :force => true do |t|
     t.string   "display_name"
-    t.integer  "cost"
+    t.decimal  "cost",         :precision => 10, :scale => 2
     t.float    "sales_tax"
-    t.integer  "price"
+    t.decimal  "price",        :precision => 10, :scale => 2
     t.boolean  "display"
+    t.string   "info"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "miscs", :force => true do |t|
     t.string   "display_name"
-    t.integer  "cost"
+    t.decimal  "cost",         :precision => 10, :scale => 2
     t.float    "sales_tax"
-    t.integer  "price"
+    t.decimal  "price",        :precision => 10, :scale => 2
     t.boolean  "display"
+    t.string   "info"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -85,7 +92,7 @@ ActiveRecord::Schema.define(:version => 20100814175903) do
     t.integer  "purchasable_id"
     t.string   "purchasable_type"
     t.string   "alteration"
-    t.integer  "price"
+    t.decimal  "price",              :precision => 10, :scale => 2
     t.integer  "alteration_user_id"
     t.boolean  "ordered"
     t.datetime "created_at"
@@ -104,7 +111,7 @@ ActiveRecord::Schema.define(:version => 20100814175903) do
 
   create_table "transactions", :force => true do |t|
     t.string   "type"
-    t.integer  "amount"
+    t.decimal  "amount",     :precision => 10, :scale => 2
     t.integer  "user_id"
     t.integer  "tab_id"
     t.datetime "created_at"

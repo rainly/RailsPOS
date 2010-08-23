@@ -6,6 +6,11 @@
     %th Cost
     %th Sales Tax
     %th Price
+    %th Info    
+    %th Revenue
+    %th Tax
+    %th Profit
+    %th Margin
     %th Display
   - for food in @foods
     %tr
@@ -13,6 +18,11 @@
       %td= h number_to_currency food.cost
       %td= h number_to_percentage food.sales_tax, :precision => 2
       %td= h number_to_currency food.price
+      %td= link_to_unless (food.info.blank?, "Information", food.info)
+      %td= h number_to_currency food.revenue
+      %td= h number_to_currency food.tax
+      %td= h number_to_currency food.profit
+      %td= h number_to_percentage food.margin, :precision => 2
       %td= h food.display
       %td= link_to 'Show', food
       %td= link_to 'Edit', edit_food_path(food)

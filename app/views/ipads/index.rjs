@@ -1,0 +1,4 @@
+page.replace_html 'left_bar', :partial => "special"
+page.select('#nav_button .highlight').first.remove_class_name('highlight')
+page.select('#nav_button .speciallink').first.add_class_name('highlight')
+page << 'setup_leftscroll();'

@@ -1,6 +1,10 @@
 class DraughtsController < ApplicationController
   def index
     @draughts = Draught.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def show

@@ -1,0 +1,9 @@
+#nav_button
+  %ul
+    %li.newlink.left-item= link_to "Quick", root_path
+    %li.tablink= link_to_remote "Tabs", :url => {:controller => "tabs", :action => "index"}, :method => "get"
+    %li.bottlelink= link_to "Bottle", root_path
+    %li.draftlink.highlight= link_to "Draft", root_path
+    %li.foodlink= link_to "Food", root_path
+    %li.misclink= link_to_remote "Misc", :url => {:controller => "miscs", :action => "index"}, :method => "get"
+    %li.speciallink.right-item= link_to_remote "Special", :url => {:controller => "ipads", :action => "index"}, :method => "get"

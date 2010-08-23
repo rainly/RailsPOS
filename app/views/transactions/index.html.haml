@@ -12,9 +12,9 @@
     %tr
       %td= h transaction.created_at
       %td= h transaction.user.username  
-      %td= h transaction.tab.name
+      %td= link_to transaction.tab.name, tab_path(transaction.tab)
       %td= h transaction.class
-      // %th= h transaction.tab.drawer.id
+      %th= h transaction.tab.drawer.id
       %td= h number_to_currency transaction.amount
       %td= link_to 'Show', transaction
       %td= link_to 'Edit', edit_transaction_path(transaction)

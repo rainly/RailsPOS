@@ -1,0 +1,5 @@
+page.replace_html 'left_bar', :partial => "ipads/lister.html.haml", :locals => {:list_items => @tabs}
+page.select('#nav_button .highlight').first.remove_class_name('highlight')
+page.select('#nav_button .tablink').first.add_class_name('highlight')
+page << 'setup_leftscroll();'
+

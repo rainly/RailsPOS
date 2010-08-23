@@ -1,30 +1,253 @@
-!primary_color = #4B7399
+!primary_color = #8B8989
+!dark_gray = #222
+!content_height = 928px
+!content_width = 768px
+!light_gray = #ccc
+!small_font = 14px
 
 body
-  :background-color = !primary_color
+  :background-color black
   :font
-    :family Verdana, Helvetica, Arial
-    :size 14px
+    :family Helvetica, Arial
+    :size = !small_font
+  :margin 0
+  :padding 0
 
 a
-  :color #0000FF
+  :color black
+  :text-decoration none
   img
     :border none
+
+ul
+  :list-style-type none
 
 .clear
   :clear both
   :height 0
   :overflow hidden
 
-#container
-  :width 75%
-  :margin 0 auto
-  :background #fff
-  :padding 20px 40px
-  :border solid 1px black
-  :margin-top 20px
+.alignleft
+  :float left
+  :padding-left 10px
 
-#flash_notice,
+.alignright
+  :float right
+  :padding-right 10px
+
+  
+#text_field
+  :font-size 26px
+  :width 230px
+  :float left
+  :margin-top 20px
+  :margin-left 10px
+
+#tab_form
+  a
+    :border 4px solid rgba(244,0,80,0.8)
+
+#tab_list
+  :position relative
+  :z-index 1
+  :overflow auto
+  :margin-left 20px
+  :margin-top 20px
+  :width 340px
+  :height 650px
+  :position relative
+  :z-index 1
+  :overflow auto
+  :background white
+  :border 1px solid rgba(0,0,0,.3)
+  :-webkit-border-radius 10px
+  ul
+    :margin 0
+    :padding 0
+    :min-height 651px
+  li
+    :overflow hidden
+    :-webkit-transition height .2s ease-in
+    :margin 0
+    :border-top 1px solid
+      :color = !light_gray
+    :border-bottom 1px solid
+      :color = !dark_gray
+    :padding .5em 0 .5em .5em
+    :height 27px
+    .price
+      :width 50px
+      :height 100%
+      :float right
+      :padding-right 1em
+    .recent
+      a
+        :color rgba(244,0,80,0.8)
+  .show_options
+    :height 130px
+    :background #E6FEE6
+
+#option_box
+  :margin-top 10px
+  :height 100px
+  :width 320px
+
+#wrap
+  :margin 0px auto
+  :width = !content_width
+
+#container
+  :height = !content_height
+
+#top_bar
+  :background black
+  :height 16px
+  
+  :font
+    :size = !small_font
+    :weight bold
+  :color = !light_gray
+  a
+    :margin-left 4px
+    :color = !light_gray
+  .drawer
+    :margin-left 30px
+  .user
+    :float right
+
+#left_bar
+  :background #C4C8CF
+  :-webkit-border-radius 5px
+  :font
+    :size 20px
+    :weight bold
+  :width 383px
+  :height 910px
+  :margin-right 1px
+  :float left
+  ul
+    :margin 0
+    :padding 0
+  li
+    :margin 0
+    :border-top 1px solid
+      :color = rgba(0,0,0,.1)
+    :border-bottom 1px solid
+      :color = rgba(0,0,0,.3)
+    a
+      :display block
+      :padding .5em 0 .5em .5em
+
+#login_box
+  :padding-top 300px
+  :width 400px
+  :margin 0px auto
+
+#purchase_alteration
+  :width 320px
+  :font
+    :size 20px
+
+#user_session_username
+  :width 400px
+  :font
+    :size 30px
+    :weight bold
+#user_session_password
+  :width 368px
+  :color white
+  :font
+    :size 30px
+    :weight bold
+#user_session_submit
+  :width 400px
+  :font
+    :size 30px
+    :weight bold
+
+
+#right_bar
+  :background #C4C8CF
+  :-webkit-border-radius 5px
+  :font
+    :size 20px
+    :weight bold
+  :width 383px
+  :height 910px
+  :float left
+  .tab_name
+    :top 20px
+    :margin-left 10px
+    :font-size 34px
+
+#nav_bar
+  :margin-top -18px
+  :font-weight bold
+  :height 50px
+  :border-bottom solid 1px #222
+  :-webkit-border-top-left-radius 5px
+  :-webkit-border-top-right-radius 5px
+  :background-image -webkit-gradient(linear, left top, left bottom, from(#c9c9c9), to(#848484), color-stop(0.6, #a1a1a1))
+
+#nav_button
+  :margin-left 150px
+  :font-size 20px
+  li
+    :background-image -webkit-gradient(linear, left top, left bottom, from(#c9c9c9), to(#848484), color-stop(0.6, #a1a1a1))
+    :display block
+    :width 80px
+    :float left
+    :margin-top 7px
+    :border
+      :right 1px solid #444
+      :top 1px solid #444
+      :bottom 1px solid #444
+    a
+      :display block
+      :text-align center
+      :color = !dark_gray
+      :padding 5px 0
+  .right-item
+    :border
+      :right 1px solid #444
+      :top 1px solid #444
+      :bottom 1px solid #444
+    :-webkit-border-top-right-radius 5px
+    :-webkit-border-bottom-right-radius 5px
+  .left-item
+    :border
+      :left 1px solid #444
+      :top 1px solid #444
+      :bottom 1px solid #444
+    :-webkit-border-top-left-radius 5px
+    :-webkit-border-bottom-left-radius 5px
+  .highlight
+    a
+      :color = !light_gray
+      :text-shadow 0px 0px 40px white
+    :background-image -webkit-gradient(linear, left top, left bottom, from(#333333), to(#4c4c4c), color-stop(0.6, #474747))
+            
+#left_list
+  :position relative
+  :z-index 1
+  :overflow auto
+  :height = !content_height
+  :font-size 20px
+  ul
+    :min-height = !content_height + 1
+
+#flash_bar      
+  :background black
+  :height 20px
+  :font
+    :size = !small_font
+    :weight bold
+  :color = !light_gray
+  a
+    :margin-left 4px
+    :color = !light_gray
+
+
 #flash_error
   :padding 5px 8px
   :margin 10px 0
@@ -54,10 +277,9 @@ a
     :font
       :weight bold
       :size 12px
-    :background-color #c00
-    :color #fff
+    :color black
   p
-    :color #333
+    :color black
     :margin-bottom 0
     :padding 8px
   ul

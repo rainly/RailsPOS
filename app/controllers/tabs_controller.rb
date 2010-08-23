@@ -1,10 +1,19 @@
 class TabsController < ApplicationController
   def index
     @tabs = Tab.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def show
     @tab = Tab.find(params[:id])
+    session['tab'] = @tab.id
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def new

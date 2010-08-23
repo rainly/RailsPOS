@@ -5,11 +5,19 @@
     %th Cashier
     %th Tab
     %th Item
+    %th Alteration Price
+    %th Alterered By
+    %th Ordered
+    %th Price
   - for purchase in @purchases
     %tr
-      %td= h purchase.user.username
-      %td= h purchase.tab.name
+      %td= link_to purchase.user.username, user_path(purchase.user)
+      %td= link_to purchase.tab.name, tab_path(purchase.tab)
       %td= h purchase.purchasable.display_name
+      %td= h purchase.alteration
+      %td= link_to purchase.alteration_user_id, user_path(purchase.alteration_user_id) unless purchase.alteration_user_id.blank?
+      %td= h purchase.ordered
+      %td= h number_to_currency purchase.price
       %td= link_to 'Show', purchase
       %td= link_to 'Edit', edit_purchase_path(purchase)
       %td= link_to 'Destroy', purchase, :confirm => 'Are you sure?', :method => :delete

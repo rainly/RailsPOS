@@ -9,13 +9,14 @@ class CreateBottles < ActiveRecord::Migration
       t.string :source
       t.float :volume
       t.string :volume_unit
-      t.integer :cost
+      t.decimal :cost, :precision => 10, :scale => 2
       t.string :glass_type
       t.float :sales_tax
       t.string :style
-      t.integer :price
+      t.decimal :price, :precision => 10, :scale => 2
       t.integer :stock
       t.boolean :display
+      t.string :info
       t.timestamps
     end
   end

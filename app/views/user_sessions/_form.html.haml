@@ -1,12 +1,10 @@
 - form_for @user_session do |f|
   = f.error_messages
   %p
-    = f.label :username
-    %br
-    = f.text_field :username
+    = f.label ""
+    = f.collection_select :username, User.all, :username, :username
   %p
-    = f.label :password
-    %br
+    = f.label ""
     = f.password_field :password
   %p
-    = f.submit "Submit"
+    = f.submit "Login"

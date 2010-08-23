@@ -1,0 +1,5 @@
+%li{:class => cycle('odd', 'even'), :id => "misc_id_#{list.id}"}
+  - if !current_tab.blank? && !current_drawer.blank?
+    = link_to_remote list.display_name.blank? ? 'No Name' : list.display_name, :url => {:controller => "purchases", :action => "create",  :ipad => true, :purchase => {:purchasable_id => list.id, :user_id => current_user, :purchasable_type => list.class.to_s, :tab_id=> current_tab}}, :method => 'post'
+  - else
+    = link_to_remote list.display_name.blank? ? 'No Name' : list.display_name, :url => {:controller => "miscs", :action => "show", :id => list.id}, :method => 'get'

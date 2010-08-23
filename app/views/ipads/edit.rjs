@@ -1,0 +1,4 @@
+page.select('.show_options').each do |purchase|
+  purchase.remove_class_name('show_options')
+end
+page.select("#purchase_#{@purchase.id}").first.add_class_name('show_options')

@@ -6,6 +6,16 @@ class Tab < ActiveRecord::Base
   
   attr_accessible :name, :user_id, :closed_at, :type_helper, :drawer_id
   
+  validates_presence_of :user_id, :type_helper, :drawer_id
+  
+  def total_sale
+    @total = 0
+    purchases.each do |purchase|
+      @total += purchase.purchasable.price
+    end
+    @total
+  end
+  
   def empty?
     if (self.purchases.count == 0) && (self.transactions.count == 0)
       return 1

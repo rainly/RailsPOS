@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   private
   
   def tab_types
-     ["Quick", "Sale", "Register", "Bull"]
+     ["Sale", "Quick", "Register", "Bull"]
   end
   
   def transaction_types
@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
   end
   
   def beer_volumes
-     ["ml", "oz", "gal","l"]
+     ["Milliliters", "Ounces", "Gallons","Liters"]
   end
   
   def beer_glasses
@@ -57,6 +57,6 @@ class ApplicationController < ActionController::Base
   end
   
   def county_tax
-     ["0.09"]
+     ["9"]
   end
 end

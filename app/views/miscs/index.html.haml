@@ -6,6 +6,7 @@
     %th Cost
     %th Sales Tax
     %th Price
+    %th Info    
     %th Display
   - for misc in @miscs
     %tr
@@ -13,6 +14,7 @@
       %td= h number_to_currency misc.cost
       %td= h number_to_percentage misc.sales_tax, :precision => 2
       %td= h number_to_currency misc.price
+      %td= link_to_unless (misc.info.blank?, "Information", misc.info)  
       %td= h misc.display
       %td= link_to 'Show', misc
       %td= link_to 'Edit', edit_misc_path(misc)
