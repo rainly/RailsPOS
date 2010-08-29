@@ -5,28 +5,13 @@
       - unless @tab.purchases.blank?
         %ul
           - @tab.purchases.each do |purchase|
-            %li{:id => "purchase_#{purchase.id}", :onclick => "showItemOptions('#purchase_#{purchase.id}');"}
-              .link{}
+            %li{:id => "purchase_#{purchase.id}"}
+              .link{:onclick => "showItemOptions('#purchase_#{purchase.id}');"}
                 %span.name&= purchase.purchasable.display_name
                 %span.price&= number_to_currency purchase.purchasable.price
               .option_box
                 %ul
-                  %li
-                    Reorder
-                  %li
-                    Misring
-                  %li
-                    Spoil
-                  %li.highlight
-                    Normal
-                  %li
-                    50%
-                  %li
-                    100%
-                  %li
-                    Tab
-                  %li
-                    Kitchen              
+                  = render :partial => 'tabs/option', :collection => Tab::OPTIONS, :locals => {:purchase => purchase}
       - else
         %p Empty tab, #{link_to_remote "delete?", :url => { :controller => 'tabs', :action => "destroy", :id => @tab.id }, :method => 'delete'}
   #tab_info

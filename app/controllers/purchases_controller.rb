@@ -34,11 +34,23 @@ class PurchasesController < ApplicationController
   
   def update
     @purchase = Purchase.find(params[:id])
-    if @purchase.update_attributes(params[:purchase])
-      flash[:notice] = "Successfully updated purchase."
-      redirect_to @purchase
-    else
-      render :action => 'edit'
+    respond_to do |format|
+      format.html do
+        if @purchase.update_attributes(params[:purchase])
+          flash[:notice] = "Successfully updated purchase."
+          redirect_to @purchase
+        else
+          render :action => 'edit'
+        end
+      end
+      format.js do
+        if @purchase.update_attributes(params[:purchase])
+          flash[:notice] = "Successfully updated purchase."
+          render :json => {:msg => 'success'}.to_json
+        else
+          render :json => {:msg => 'fail'}, :status => 500
+        end
+      end
     end
   end
   

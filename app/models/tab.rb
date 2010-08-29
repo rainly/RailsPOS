@@ -8,6 +8,19 @@ class Tab < ActiveRecord::Base
   
   validates_presence_of :user_id, :type_helper, :drawer_id
   
+  OPTIONS = [
+    'Reorder',
+    'Misring',
+    'Spoil',
+    'Normal',
+    '50%',
+    '100%',
+    'Tab',
+    'Kitchen'
+  ]
+  
+  DEFAULT_OPTION = 'Normal'
+  
   def total_sale
     @total = 0
     purchases.each do |purchase|

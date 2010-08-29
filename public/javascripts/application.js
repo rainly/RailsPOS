@@ -5,7 +5,7 @@ function submitForm () {
 }
 
 function clearText (thefield) {
-  if (thefield.defaultValue==thefield.value) {
+  if (thefield.defaultValue === thefield.value) {
     thefield.value = "";
   }
 }
@@ -29,8 +29,37 @@ function setup_rightscroll () {
 document.addEventListener('DOMContentLoaded', setup_rightscroll);
 
 function showItemOptions(itemId) {
+  var old_item;
   $$(".show_options").each(function(value, index) {
+    old_item = value;
     value.removeClassName("show_options");
   });
-  $$(itemId).first().addClassName("show_options");
+  var item = $$(itemId).first();
+  if (old_item !== item) {
+    item.addClassName("show_options");
+  }
+  rightScroll.refresh();
+}
+
+function chooseOptionForPurchase(purchaseId, option, link) {
+  var old_item;
+  $$("#purchase_" + purchaseId + " .highlight").each(function(value, index) {
+    old_item = value;
+    value.removeClassName("highlight");
+  });
+  var item = link.parentNode;
+  item.addClassName("highlight");
+  if (old_item !== item) {
+    new Ajax.Request(link.href, {
+      method:     'put',
+      parameters: {
+        'purchase[alteration]': option
+      },
+      onSuccess: function (data) {
+        console.log(data);
+        alert('success!');
+      }
+    });
+  }
+  return false;
 }

@@ -1,0 +1,2 @@
+%li{:class => option_selected_class(option, option_counter, purchase.alteration)}
+  = link_to option, {:controller => 'purchases', :action => 'update', :id => purchase.id}, {:onclick => "return chooseOptionForPurchase(#{purchase.id}, '#{option}', this);"}
