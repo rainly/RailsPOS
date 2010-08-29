@@ -23,7 +23,14 @@ var rightScroll;
 
 function setup_rightscroll () {
   document.addEventListener('touchmove', function(e){ e.preventDefault(); });
-  leftScroll = new iScroll('rightscroller');
+  rightScroll = new iScroll('rightscroller');
 }
 
 document.addEventListener('DOMContentLoaded', setup_rightscroll);
+
+function showItemOptions(itemId) {
+  $$(".show_options").each(function(value, index) {
+    value.removeClassName("show_options");
+  });
+  $$(itemId).first().addClassName("show_options");
+}
