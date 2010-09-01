@@ -44,9 +44,11 @@ class PurchasesController < ApplicationController
         end
       end
       format.js do
-        if @purchase.update_attributes(params[:purchase])
+        @purchase.update_price(params[:purchase])
+        if @purchase.save
           flash[:notice] = "Successfully updated purchase."
-          render :json => {:msg => 'success'}.to_json
+          #render :json => {:msg => 'success'}.to_json
+          @tab = Tab.find_by_id(@purchase.tab_id)
         else
           render :json => {:msg => 'fail'}, :status => 500
         end

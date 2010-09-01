@@ -1,0 +1,29 @@
+body {
+  background-color: white;
+  font-family: Helvetica;
+  font-size: 36px; }
+
+.title {
+  text-align: center;
+  font-size: 50px; }
+
+.subtitle {
+  font-size: 42px; }
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden; }
+
+.float_right {
+  float: right; }
+
+.drinknoevil {
+  text-align: center;
+  padding-top: 200px;
+  font-family: Chalkduster;
+  font-size: 36px; }
+
+#container {
+  width: 700px;
+  float: left; }

@@ -55,6 +55,8 @@ ul {
     margin: 0;
     padding: 0;
     min-height: 651px; }
+  #tab_list .pricehighlight {
+    color: red; }
   #tab_list li {
     overflow: hidden;
     -webkit-transition: height 0s ease-in;
@@ -231,6 +233,8 @@ ul {
   font-size: 20px; }
   #left_list ul {
     min-height: 929px; }
+  #left_list .current a {
+    color: red; }
 
 #flash_bar {
   background: black;

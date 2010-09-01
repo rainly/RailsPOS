@@ -1,0 +1,7 @@
+page.replace_html 'tab_info', :partial => "tabs/info"
+page.replace_html 'purchase_price_' + @purchase.id.to_s, number_to_currency(@purchase.price)
+unless @purchase.alteration == "Normal" || @purchase.alteration.blank?
+  page.select("#purchase_#{@purchase.id}").first.add_class_name('pricehighlight')
+else
+  page.select("#purchase_#{@purchase.id}").first.remove_class_name('pricehighlight')
+end

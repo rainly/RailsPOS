@@ -1,6 +1,6 @@
 #nav_button
   %ul
-    %li.newlink.left-item= link_to "Quick", root_path
+    %li.newlink.left-item= link_to_remote "Quick", :url => {:controller => "tabs", :action => "create"}, :method => "post"
     %li.tablink= link_to_remote "Tabs", :url => {:controller => "tabs", :action => "index"}, :method => "get"
     %li.bottlelink= link_to "Bottle", root_path
     %li.draftlink.highlight= link_to "Draft", root_path

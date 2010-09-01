@@ -24,7 +24,7 @@ class Tab < ActiveRecord::Base
   def total_sale
     @total = 0
     purchases.each do |purchase|
-      @total += purchase.purchasable.price
+      @total += purchase.price
     end
     @total
   end

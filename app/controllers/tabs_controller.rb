@@ -24,10 +24,13 @@ class TabsController < ApplicationController
   def create
     @tab = Tab.new(params[:tab])
     if @tab.save
-      flash[:notice] = "Successfully created tab."
-      redirect_to @tab
-    else
-      render :action => 'new'
+      respond_to do |format|
+        format.html do
+          flash[:notice] = "Successfully created tab."
+          redirect_to @tab
+        end
+        format.js
+      end
     end
   end
   

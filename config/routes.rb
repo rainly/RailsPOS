@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :printers
+  map.print 'printer/print/:id', :controller => 'printers', :action => 'print'
+  
+
   map.ipad "ipad", :controller => "ipads", :action => "index"
   map.admin "admin", :controller => "users", :action => "index"
 

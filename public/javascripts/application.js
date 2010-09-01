@@ -56,8 +56,6 @@ function chooseOptionForPurchase(purchaseId, option, link) {
         'purchase[alteration]': option
       },
       onSuccess: function (data) {
-        console.log(data);
-        alert('success!');
       }
     });
   }

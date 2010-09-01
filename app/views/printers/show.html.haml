@@ -1,0 +1,34 @@
+- title "Printer"
+%p.title 
+  Mill Valley Beerworks
+  %BR
+  %span.subtitle 173 Throckmorton Ave
+  %br
+  %span.subtitle Mill Valley Ca 94941
+
+
+
+
+%p
+  %strong Tab:
+  =h @tab.name
+  %br
+  %strong Opened:
+  =h @tab.created_at.to_formatted_s(:short)
+  %br
+  %strong Drawer ID:
+  =h @tab.drawer_id
+  %br
+  %strong Cashier:
+  =h @tab.user.username
+
+#tab_list
+  - unless @tab.purchases.blank?
+    %ul
+      - @tab.purchases.each do |purchase|
+        %li{:id => "purchase_#{purchase.id}"}
+          %span.name{:id => "purchase_name_#{purchase.id}"}&= purchase.purchasable.display_name
+          %span.float_right{:id => "purchase_price_#{purchase.id}"}&= number_to_currency purchase.price
+#tab_info
+  %span.total_items.float_right= "TOTAL #{number_to_currency @tab.total_sale}"
+  %p.drinknoevil drink no evil
