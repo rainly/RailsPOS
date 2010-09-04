@@ -17,4 +17,8 @@ class Purchase < ActiveRecord::Base
     end
   end
 
+  def not_normal?
+    !['Normal'].include? self.alteration
+  end
+
 end

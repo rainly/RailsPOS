@@ -5,7 +5,7 @@
       - unless @tab.purchases.blank?
         %ul
           - @tab.purchases.each do |purchase|
-            %li{:id => "purchase_#{purchase.id}"}
+            %li{:id => "purchase_#{purchase.id}", :class => purchase_class(purchase)}
               .link{:onclick => "showItemOptions('#purchase_#{purchase.id}');"}
                 %span.name{:id => "purchase_name_#{purchase.id}"}&= purchase.purchasable.display_name
                 %span.price{:id => "purchase_price_#{purchase.id}"}&= number_to_currency purchase.price

@@ -8,6 +8,11 @@ class Tab < ActiveRecord::Base
   
   validates_presence_of :user_id, :type_helper, :drawer_id
   
+  named_scope :open, :conditions => {:closed_at => nil}
+  named_scope :for_drawer, lambda { |drawer|
+    { :conditions => {:drawer_id => drawer.id} }
+  }
+  
   OPTIONS = [
     'Reorder',
     'Misring',

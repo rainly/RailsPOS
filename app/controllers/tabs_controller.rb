@@ -1,6 +1,6 @@
 class TabsController < ApplicationController
   def index
-    @tabs = Tab.all
+    @tabs = Tab.open.for_drawer(@current_drawer)
     respond_to do |format|
       format.html
       format.js

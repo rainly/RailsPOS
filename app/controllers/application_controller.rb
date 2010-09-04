@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
-
- 
   
   helper_method :current_user
   helper_method :beer_styles
@@ -19,6 +17,8 @@ class ApplicationController < ActionController::Base
   
   helper_method :tab_types
   helper_method :transaction_types
+  
+  before_filter :current_drawer
   
   private
   
@@ -38,6 +38,11 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record
+  end
+  
+  def current_drawer
+    return @current_drawer if defined?(@current_drawer)
+    @current_drawer = Drawer.find session['drawer']
   end
   
   def beer_styles

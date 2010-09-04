@@ -10,4 +10,8 @@ module TabsHelper
     end
     css_class
   end
+  
+  def purchase_class(purchase)
+    purchase.not_normal? ? 'pricehighlight' : nil
+  end
 end
